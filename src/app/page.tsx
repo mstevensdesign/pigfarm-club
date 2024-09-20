@@ -13,7 +13,6 @@ export default function Home() {
           priority
         />
         <h2 className="text-3xl font-bold text-green-500">PigFarm Club</h2>
-        <h3>HI GUYS</h3>
       </div>
     </>
   );
