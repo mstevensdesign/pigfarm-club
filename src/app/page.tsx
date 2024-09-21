@@ -3,7 +3,7 @@ import Image from "next/image";
 export default function Home() {
   return (
     <>
-      <div className="flex h-screen w-screen flex-col items-center justify-center bg-yellow-200">
+      <div className="flex h-screen w-screen flex-col items-center justify-center bg-pink-400">
         <Image
           className="transition-all hover:scale-125"
           src="/taco-smile.png"
