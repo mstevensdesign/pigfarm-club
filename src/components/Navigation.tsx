@@ -162,15 +162,24 @@ export function Navigation() {
             </PopoverPanel>
           </Popover>
 
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <Link
+            href="/roster"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Roster
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          </Link>
+          <Link
+            href="/aboutus"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             About Us
-          </a>
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          </Link>
+          <Link
+            href="/calendar"
+            className="text-sm font-semibold leading-6 text-gray-900"
+          >
             Calendar
-          </a>
+          </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
@@ -186,7 +195,7 @@ export function Navigation() {
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
           <div className="flex items-center justify-between">
-            <a href="#" className="-m-1.5 p-1.5">
+            <Link href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">PigFarm Club</span>
               <Image
                 className="transition-all hover:scale-125"
@@ -196,7 +205,7 @@ export function Navigation() {
                 height={32}
                 priority
               />
-            </a>
+            </Link>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(false)}
@@ -231,24 +240,24 @@ export function Navigation() {
                     ))}
                   </DisclosurePanel>
                 </Disclosure>
-                <a
-                  href="#"
+                <Link
+                  href="/roster"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Roster
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  href="/aboutus"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   About Us
-                </a>
-                <a
-                  href="#"
+                </Link>
+                <Link
+                  href="/calendar"
                   className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                 >
                   Calendar
-                </a>
+                </Link>
               </div>
               <div className="py-6">
                 <a
