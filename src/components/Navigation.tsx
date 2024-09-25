@@ -1,8 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { OverwatchLogo } from "./OverwatchLogo";
-import { WoWLogo } from "./WoWLogo";
+import { OverwatchLogo, WoWLogo } from "@/components/Logos";
 import { useState } from "react";
 import {
   Dialog,
