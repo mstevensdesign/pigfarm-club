@@ -19,7 +19,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <Navigation />
-        {children}
+        <div className="flex h-[calc(100vh-74px)] w-screen flex-col items-center justify-center bg-yellow-400">
+          {children}
+        </div>
       </body>
     </html>
   );
