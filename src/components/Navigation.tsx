@@ -1,7 +1,12 @@
 "use client";
 
 import Image from "next/image";
-import { OverwatchLogo, WoWLogo } from "@/components/Logos";
+import {
+  OverwatchLogo,
+  WoWLogo,
+  DBDLogo,
+  MinecraftLogo,
+} from "@/components/Logos";
 import { useState } from "react";
 import {
   Dialog,
@@ -22,6 +27,7 @@ import {
   FingerPrintIcon,
   SquaresPlusIcon,
   XMarkIcon,
+  LockClosedIcon,
 } from "@heroicons/react/24/outline";
 import {
   ChevronDownIcon,
@@ -46,25 +52,19 @@ const products = [
     name: "Dead by Daylight",
     description: "Your customers’ data will be safe and secure",
     href: "#",
-    icon: FingerPrintIcon,
+    icon: DBDLogo,
+  },
+  {
+    name: "Minecraft",
+    description: "Build strategic funnels that will convert",
+    href: "#",
+    icon: MinecraftLogo,
   },
   {
     name: "Deadlock",
     description: "Connect with third-party tools",
     href: "#",
-    icon: SquaresPlusIcon,
-  },
-  {
-    name: "Minecraft",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
-  },
-  {
-    name: "Minecraft",
-    description: "Build strategic funnels that will convert",
-    href: "#",
-    icon: ArrowPathIcon,
+    icon: LockClosedIcon,
   },
 ];
 const callsToAction = [
