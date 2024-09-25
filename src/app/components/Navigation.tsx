@@ -102,7 +102,7 @@ export function Navigation() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-green-500">
               Games
               <ChevronDownIcon
                 aria-hidden="true"
@@ -118,9 +118,10 @@ export function Navigation() {
                 {products.map((item) => (
                   <div
                     key={item.name}
-                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                    // className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
+                    className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-yellow-200"
                   >
-                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white">
+                    <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-white group-hover:bg-yellow-50">
                       <item.icon
                         aria-hidden="true"
                         className="h-6 w-6 text-gray-600 group-hover:text-indigo-600"
@@ -129,7 +130,7 @@ export function Navigation() {
                     <div className="flex-auto">
                       <Link
                         href={item.href}
-                        className="block font-semibold text-gray-900"
+                        className="block font-semibold text-green-500"
                       >
                         {item.name}
                         <span className="absolute inset-0" />
@@ -159,25 +160,28 @@ export function Navigation() {
 
           <Link
             href="/roster"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-semibold leading-6 text-green-500"
           >
             Roster
           </Link>
           <Link
             href="/aboutus"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-semibold leading-6 text-green-500"
           >
             About Us
           </Link>
           <Link
             href="/calendar"
-            className="text-sm font-semibold leading-6 text-gray-900"
+            className="text-sm font-semibold leading-6 text-green-500"
           >
             Calendar
           </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+          <a
+            href="#"
+            className="text-sm font-semibold leading-6 text-green-500"
+          >
             Log in <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
