@@ -140,7 +140,7 @@ export function Navigation() {
                   </div>
                 ))}
               </div>
-              <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
+              {/* <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
                 {callsToAction.map((item) => (
                   <a
                     key={item.name}
@@ -154,7 +154,7 @@ export function Navigation() {
                     {item.name}
                   </a>
                 ))}
-              </div>
+              </div> */}
             </PopoverPanel>
           </Popover>
 
@@ -211,7 +211,8 @@ export function Navigation() {
                     />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
-                    {[...products, ...callsToAction].map((item) => (
+                    {/* {[...products, ...callsToAction].map((item) => ( */}
+                    {[...products].map((item) => (
                       <DisclosureButton
                         key={item.name}
                         as="a"
