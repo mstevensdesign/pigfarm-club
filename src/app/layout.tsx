@@ -17,9 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className} bg-yellow-400`}>
         <Navigation />
-        <div className="flex h-[calc(100vh-74px)] w-screen flex-col items-center justify-center bg-yellow-400">
+        <div className="flex h-[calc(100vh-74px*2)] w-screen flex-col items-center justify-center">
           {children}
         </div>
       </body>
