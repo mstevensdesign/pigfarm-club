@@ -40,31 +40,31 @@ const products = [
   {
     name: "Overwatch 2",
     description: "Get a better understanding of your traffic",
-    href: "#",
+    href: "/games/overwatch2",
     icon: OverwatchLogo,
   },
   {
     name: "World of Warcraft",
     description: "Speak directly to your customers",
-    href: "#",
+    href: "/games/worldofwarcraft",
     icon: WoWLogo,
   },
   {
     name: "Dead by Daylight",
     description: "Your customers’ data will be safe and secure",
-    href: "#",
+    href: "/games/deadbydaylight",
     icon: DBDLogo,
   },
   {
     name: "Minecraft",
     description: "Build strategic funnels that will convert",
-    href: "#",
+    href: "/games/minecraft",
     icon: MinecraftLogo,
   },
   {
     name: "Deadlock",
     description: "Connect with third-party tools",
-    href: "#",
+    href: "/games/deadlock",
     icon: LockClosedIcon,
   },
 ];
