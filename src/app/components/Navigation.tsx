@@ -2,12 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import {
-  OverwatchLogo,
-  WoWLogo,
-  DBDLogo,
-  MinecraftLogo,
-} from "@/components/Logos";
+import { OverwatchLogo, WoWLogo, DBDLogo, MinecraftLogo } from "./Logos";
 import { useState } from "react";
 import {
   Dialog,
