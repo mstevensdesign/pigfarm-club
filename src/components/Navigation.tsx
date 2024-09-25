@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { OverwatchLogo } from "./OverwatchLogo";
+import { WoWLogo } from "./WoWLogo";
 import { useState } from "react";
 import {
   Dialog,
@@ -40,7 +41,7 @@ const products = [
     name: "World of Warcraft",
     description: "Speak directly to your customers",
     href: "#",
-    icon: CursorArrowRaysIcon,
+    icon: WoWLogo,
   },
   {
     name: "Dead by Daylight",
