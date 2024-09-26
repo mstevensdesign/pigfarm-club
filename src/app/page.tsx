@@ -11,7 +11,7 @@ export default function Home() {
         height={37}
         priority
       />
-      <h2 className="text-3xl font-bold text-green-500">PigFarm Club</h2>
+      <h2 className="text-5xl font-bold text-green-500">PigFarm Club</h2>
     </>
     // <>
     //   <div className="flex h-[calc(100vh-74px)] w-screen flex-col items-center justify-center bg-yellow-400">
