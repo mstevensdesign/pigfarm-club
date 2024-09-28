@@ -19,7 +19,8 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-yellow-400`}>
         <Navigation />
-        <div className="flex h-[calc(100vh-74px*2)] w-screen flex-col items-center justify-center">
+        <div>
+          {/* <div className="flex h-[calc(100vh-74px*2)] w-screen flex-col items-center justify-center"> */}
           {children}
         </div>
       </body>
