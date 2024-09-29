@@ -3,6 +3,7 @@
 import React from "react";
 import ReactPlayer from "react-player/youtube";
 import { useEffect, useState } from "react";
+import Clip from "@/app/components/Clip";
 
 type Props = {};
 
@@ -20,42 +21,9 @@ const Overwatch2 = (props: Props) => {
   return (
     <>
       <h2 className="mt-5 text-center text-lg">Overwatch 2</h2>
-      {isMounted && (
-        <div className="m-5">
-          <div className="relative pt-[56.25%]">
-            <ReactPlayer
-              url="https://www.youtube.com/watch?v=Smoz9J3ZSts"
-              className="absolute left-0 top-0"
-              width="100%"
-              height="100%"
-            />
-          </div>
-        </div>
-      )}
-      {isMounted && (
-        <div className="m-5">
-          <div className="relative pt-[56.25%]">
-            <ReactPlayer
-              url="https://www.youtube.com/watch?v=Smoz9J3ZSts"
-              className="absolute left-0 top-0"
-              width="100%"
-              height="100%"
-            />
-          </div>
-        </div>
-      )}
-      {isMounted && (
-        <div className="m-5">
-          <div className="relative pt-[56.25%]">
-            <ReactPlayer
-              url="https://www.youtube.com/watch?v=Smoz9J3ZSts"
-              className="absolute left-0 top-0"
-              width="100%"
-              height="100%"
-            />
-          </div>
-        </div>
-      )}
+      {isMounted && <Clip url="https://www.youtube.com/watch?v=Smoz9J3ZSts" />}
+      {isMounted && <Clip url="https://www.youtube.com/watch?v=Smoz9J3ZSts" />}
+      {isMounted && <Clip url="https://www.youtube.com/watch?v=Smoz9J3ZSts" />}
     </>
   );
 };
