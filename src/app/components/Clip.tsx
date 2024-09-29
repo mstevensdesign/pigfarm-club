@@ -22,6 +22,14 @@ const Clip = (props: Props) => {
   return (
     <>
       {isMounted && (
+        <ReactPlayer
+          url={props.url}
+          className="aspect-video"
+          width="100%"
+          height="100%"
+        />
+      )}
+      {/* {isMounted && (
         <div className="m-5 max-w-5xl">
           <div className="relative pt-[56.25%]">
             <h2 className="absolute bottom-0 left-0 z-10 text-sm md:text-2xl">
@@ -38,7 +46,7 @@ const Clip = (props: Props) => {
             />
           </div>
         </div>
-      )}
+      )} */}
     </>
   );
 };
