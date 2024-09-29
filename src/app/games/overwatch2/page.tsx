@@ -20,10 +20,12 @@ const Overwatch2 = (props: Props) => {
   return (
     <>
       {isMounted && (
-        <div>
+        <div className="relative pt-[56.25%]">
           <ReactPlayer
             url="https://www.youtube.com/watch?v=Smoz9J3ZSts"
+            className="absolute left-0 top-0"
             width="100%"
+            height="100%"
           />
         </div>
       )}
