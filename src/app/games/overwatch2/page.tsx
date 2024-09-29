@@ -1,8 +1,5 @@
 "use client";
 
-import React from "react";
-import ReactPlayer from "react-player/youtube";
-import { useEffect, useState } from "react";
 import Clip from "@/app/components/Clip";
 
 type Props = {};
