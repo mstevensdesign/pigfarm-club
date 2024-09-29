@@ -19,6 +19,7 @@ const Overwatch2 = (props: Props) => {
   }, []);
   return (
     <>
+      <h2 className="mt-5 text-center text-lg">Overwatch 2</h2>
       {isMounted && (
         <div className="m-5">
           <div className="relative pt-[56.25%]">
