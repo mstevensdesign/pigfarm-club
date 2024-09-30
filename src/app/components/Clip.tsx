@@ -5,6 +5,7 @@ type Props = {
   url: string;
   title?: string;
   description?: string;
+  className?: string;
 };
 
 const Clip = (props: Props) => {
@@ -24,7 +25,7 @@ const Clip = (props: Props) => {
       {isMounted && (
         <ReactPlayer
           url={props.url}
-          className="aspect-video"
+          className={`${props.className} aspect-video`}
           width="100%"
           height="100%"
         />

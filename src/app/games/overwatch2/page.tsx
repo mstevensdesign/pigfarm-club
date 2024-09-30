@@ -13,16 +13,19 @@ const Overwatch2 = (props: Props) => {
           url="https://www.youtube.com/watch?v=Smoz9J3ZSts"
           title="Rip BANX"
           description="This is a description"
+          className="mb-1 px-2"
         />
         <Clip
           url="https://www.youtube.com/watch?v=Smoz9J3ZSts"
           title="Rip BANX"
           description="This is a description"
+          className="mb-1 px-2"
         />
         <Clip
           url="https://www.youtube.com/watch?v=Smoz9J3ZSts"
           title="Rip BANX"
           description="This is a description"
+          className="mb-1 px-2"
         />
       </div>
     </>
