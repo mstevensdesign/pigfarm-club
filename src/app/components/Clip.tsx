@@ -44,19 +44,19 @@ const Clip = (props: Props) => {
               </p>
             )}
             {props.author && (
-              <p className="text-xs font-light text-gray-600 md:text-sm lg:text-lg">
+              <p className="text-xs font-normal text-gray-600 md:text-sm lg:text-lg">
                 {props.author}
               </p>
             )}
           </div>
           <div className="flex flex-col text-right">
             {props.date && (
-              <p className="text-xs font-thin text-gray-600 md:text-sm lg:text-lg">
+              <p className="text-xs font-light text-gray-600 md:text-sm lg:text-lg">
                 {props.date}
               </p>
             )}
             {props.description && (
-              <p className="text-xs font-thin text-gray-600 md:text-sm lg:text-lg">
+              <p className="text-xs font-light text-gray-600 md:text-sm lg:text-lg">
                 {props.description}
               </p>
             )}
