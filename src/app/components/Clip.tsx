@@ -3,9 +3,11 @@ import { useEffect, useState } from "react";
 
 type Props = {
   url: string;
+  author?: string;
   title?: string;
   description?: string;
   className?: string;
+  date?: string;
 };
 
 const Clip = (props: Props) => {
@@ -21,34 +23,30 @@ const Clip = (props: Props) => {
   }, []);
 
   return (
-    <>
-      {isMounted && (
-        <ReactPlayer
-          url={props.url}
-          className={`${props.className} aspect-video`}
-          width="100%"
-          height="100%"
-        />
-      )}
-      {/* {isMounted && (
-        <div className="m-5 max-w-5xl">
-          <div className="relative pt-[56.25%]">
-            <h2 className="absolute bottom-0 left-0 z-10 text-sm md:text-2xl">
-              {props.title}
-            </h2>
-            <h2 className="absolute bottom-0 right-0 z-10 text-sm md:text-2xl">
-              {props.description}
-            </h2>
-            <ReactPlayer
-              url={props.url}
-              className="absolute left-0 top-0"
-              width="100%"
-              height="100%"
-            />
-          </div>
-        </div>
-      )} */}
-    </>
+    <div className={`card ${props.className}`}>
+      <div className="rounded-lg bg-white p-4 shadow-md">
+        {isMounted && (
+          <ReactPlayer
+            url={props.url}
+            className="aspect-video"
+            width="100%"
+            height="100%"
+          />
+        )}
+        {props.title && (
+          <h2 className="mt-4 text-xl font-semibold">{props.title}</h2>
+        )}
+        {props.author && (
+          <p className="mt-2 text-sm text-gray-600">{props.author}</p>
+        )}
+        {props.date && (
+          <p className="mt-1 text-xs text-gray-500">{props.date}</p>
+        )}
+        {props.description && (
+          <p className="mt-2 text-gray-700">{props.description}</p>
+        )}
+      </div>
+    </div>
   );
 };
 
