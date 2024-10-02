@@ -1,8 +1,11 @@
+"use client";
+
 import ReactPlayer from "react-player";
 import { useEffect, useState } from "react";
 
 type Props = {
-  url: string;
+  key?: number;
+  url?: string;
   author?: string;
   title?: string;
   description?: string;
@@ -23,7 +26,7 @@ const Clip = (props: Props) => {
   }, []);
 
   return (
-    <div className={`card ${props.className}`}>
+    <div key={props.key} className={`card ${props.className}`}>
       <div className="rounded-lg bg-white p-4 shadow-md">
         {isMounted && (
           <ReactPlayer
