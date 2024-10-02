@@ -15,7 +15,7 @@ const Overwatch2 = async (props: Props) => {
       <h2 className="my-3 text-center text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
         Overwatch 2
       </h2>
-      <div className="grid grid-cols-1 gap-x-2 gap-y-4 p-2 lg:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-x-2 gap-y-4 p-2 md:grid-cols-2 xl:grid-cols-3">
         {rows.map((row) => (
           <Clip
             key={row.id}

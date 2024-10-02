@@ -39,24 +39,24 @@ const Clip = (props: Props) => {
         <div className="mt-4 flex justify-between">
           <div className="flex flex-col">
             {props.title && (
-              <p className="text-sm font-semibold md:text-xl lg:text-2xl">
+              <p className="text-sm font-semibold md:text-lg lg:text-xl">
                 {props.title}
               </p>
             )}
             {props.author && (
-              <p className="text-sm text-gray-700 md:text-base lg:text-lg">
+              <p className="text-sm text-gray-700 md:text-lg lg:text-xl">
                 {props.author}
               </p>
             )}
           </div>
           <div className="flex flex-col text-right">
             {props.date && (
-              <p className="text-sm text-gray-700 md:text-base lg:text-lg">
+              <p className="text-sm text-gray-700 md:text-lg lg:text-xl">
                 {props.date}
               </p>
             )}
             {props.description && (
-              <p className="text-sm text-gray-700 md:text-base lg:text-lg">
+              <p className="text-sm text-gray-700 md:text-lg lg:text-xl">
                 {props.description}
               </p>
             )}
