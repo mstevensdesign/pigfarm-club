@@ -70,7 +70,7 @@ const Roster = (props: Props) => {
             Our Team
           </h2>
           <p className="mt-6 text-lg leading-8 text-white">
-            We're a bunch of nerds who love gaming and building cool stuff.
+            We are a bunch of nerds who love gaming and building cool stuff.
           </p>
         </div>
         <ul
