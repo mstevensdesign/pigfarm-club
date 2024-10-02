@@ -2,6 +2,7 @@ import Clip from "@/app/components/Clip";
 import { sql } from "@vercel/postgres";
 
 export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 type Props = {};
 
