@@ -7,7 +7,8 @@ export const fetchCache = "force-no-store";
 type Props = {};
 
 const Overwatch2 = async (props: Props) => {
-  const { rows } = await sql`SELECT * from CLIPS where game = 'overwatch2'`;
+  const { rows } =
+    await sql`SELECT * from CLIPS where game = 'overwatch2' ORDER BY id ASC`;
 
   return (
     <>
