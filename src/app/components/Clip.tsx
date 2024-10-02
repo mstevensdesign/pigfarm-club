@@ -34,7 +34,9 @@ const Clip = (props: Props) => {
           />
         )}
         {props.title && (
-          <h2 className="mt-4 text-xl font-semibold">{props.title}</h2>
+          <h2 className="mt-4 text-xl font-semibold md:text-2xl lg:text-3xl">
+            {props.title}
+          </h2>
         )}
         {props.author && (
           <p className="mt-2 text-sm text-gray-600">{props.author}</p>
@@ -43,7 +45,9 @@ const Clip = (props: Props) => {
           <p className="mt-1 text-xs text-gray-500">{props.date}</p>
         )}
         {props.description && (
-          <p className="mt-2 text-gray-700">{props.description}</p>
+          <p className="mt-2 text-lg text-gray-700 md:text-xl lg:text-2xl">
+            {props.description}
+          </p>
         )}
       </div>
     </div>
