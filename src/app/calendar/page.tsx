@@ -22,14 +22,14 @@ const days = [
     events: [
       {
         id: 1,
-        name: "Design review",
+        name: "Nilbog Dance Off",
         time: "10AM",
         datetime: "2022-01-03T10:00",
         href: "#",
       },
       {
         id: 2,
-        name: "Sales meeting",
+        name: "PWN Noobs",
         time: "2PM",
         datetime: "2022-01-03T14:00",
         href: "#",
@@ -45,7 +45,7 @@ const days = [
     events: [
       {
         id: 3,
-        name: "Date night",
+        name: "Blackjack and Hookers",
         time: "6PM",
         datetime: "2022-01-08T18:00",
         href: "#",
@@ -63,7 +63,7 @@ const days = [
     events: [
       {
         id: 6,
-        name: "Sam's birthday party",
+        name: "Bean's birthday party",
         time: "2PM",
         datetime: "2022-01-25T14:00",
         href: "#",
@@ -86,14 +86,14 @@ const days = [
     events: [
       {
         id: 4,
-        name: "Maple syrup museum",
+        name: "Feet Night",
         time: "3PM",
         datetime: "2022-01-22T15:00",
         href: "#",
       },
       {
         id: 5,
-        name: "Hockey game",
+        name: "Tickle Fights",
         time: "7PM",
         datetime: "2022-01-22T19:00",
         href: "#",
@@ -117,7 +117,7 @@ const days = [
     events: [
       {
         id: 7,
-        name: "Cinema with friends",
+        name: "Group Cry",
         time: "9PM",
         datetime: "2022-02-04T21:00",
         href: "#",
