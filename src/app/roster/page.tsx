@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 type Props = {};
@@ -78,10 +79,12 @@ const Roster = (props: Props) => {
         >
           {people.map((person) => (
             <li key={person.name}>
-              <img
+              <Image
                 alt=""
                 src={person.imageUrl}
                 className="aspect-[14/13] w-full rounded-2xl object-cover"
+                width={200}
+                height={200}
               />
               <h3 className="mt-6 text-lg font-semibold leading-8 tracking-tight text-white">
                 {person.name}
