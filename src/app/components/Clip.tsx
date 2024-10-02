@@ -36,8 +36,8 @@ const Clip = (props: Props) => {
             height="100%"
           />
         )}
-        <div className="mt-4 flex flex-col">
-          <div className="flex justify-between">
+        <div className="mt-2 flex flex-col">
+          <div className="flex items-baseline justify-between">
             {props.title && (
               <p className="text-sm font-semibold md:text-lg lg:text-xl">
                 {props.title}
@@ -49,7 +49,7 @@ const Clip = (props: Props) => {
               </p>
             )}
           </div>
-          <div className="mt-2 flex justify-between">
+          <div className="flex items-baseline justify-between">
             {props.author && (
               <p className="text-xs font-normal text-gray-600 md:text-sm lg:text-lg">
                 {props.author}
