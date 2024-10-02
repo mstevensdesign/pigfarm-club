@@ -33,22 +33,32 @@ const Clip = (props: Props) => {
             height="100%"
           />
         )}
-        {props.title && (
-          <h2 className="mt-4 text-xl font-semibold md:text-2xl lg:text-3xl">
-            {props.title}
-          </h2>
-        )}
-        {props.author && (
-          <p className="mt-2 text-sm text-gray-600">{props.author}</p>
-        )}
-        {props.date && (
-          <p className="mt-1 text-xs text-gray-500">{props.date}</p>
-        )}
-        {props.description && (
-          <p className="mt-2 text-lg text-gray-700 md:text-xl lg:text-2xl">
-            {props.description}
-          </p>
-        )}
+        <div className="mt-4 flex justify-between">
+          <div className="flex flex-col">
+            {props.title && (
+              <p className="text-sm font-semibold md:text-xl lg:text-2xl">
+                {props.title}
+              </p>
+            )}
+            {props.author && (
+              <p className="text-sm text-gray-700 md:text-base lg:text-lg">
+                {props.author}
+              </p>
+            )}
+          </div>
+          <div className="flex flex-col text-right">
+            {props.date && (
+              <p className="text-sm text-gray-700 md:text-base lg:text-lg">
+                {props.date}
+              </p>
+            )}
+            {props.description && (
+              <p className="text-sm text-gray-700 md:text-base lg:text-lg">
+                {props.description}
+              </p>
+            )}
+          </div>
+        </div>
       </div>
     </div>
   );
