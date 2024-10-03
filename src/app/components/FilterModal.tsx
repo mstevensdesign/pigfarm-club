@@ -20,8 +20,8 @@ const filters = [
     name: "Player",
     options: [
       { value: "Tubs", label: "Tubs" },
-      { value: "Walk", label: "Walk" },
-      { value: "IXI", label: "IXI" },
+      { value: "Walkblind", label: "Walk" },
+      { value: "Potat", label: "Potat" },
       { value: "Bon", label: "Bon" },
       { value: "Rub", label: "Rub" },
       { value: "Banx", label: "Banx" },
