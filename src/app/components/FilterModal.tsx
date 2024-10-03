@@ -16,40 +16,44 @@ type Props = {};
 
 const filters = [
   {
-    id: "color",
-    name: "Color",
+    id: "player",
+    name: "Player",
     options: [
-      { value: "white", label: "White" },
-      { value: "beige", label: "Beige" },
-      { value: "blue", label: "Blue" },
-      { value: "brown", label: "Brown" },
-      { value: "green", label: "Green" },
-      { value: "purple", label: "Purple" },
+      { value: "Tubs", label: "Tubs" },
+      { value: "Walk", label: "Walk" },
+      { value: "IXI", label: "IXI" },
+      { value: "Bon", label: "Bon" },
+      { value: "Rub", label: "Rub" },
+      { value: "Banx", label: "Banx" },
+      { value: "AJ", label: "AJ" },
+      { value: "Taff", label: "Taff" },
+      { value: "Alina", label: "Alina" },
+      { value: "Wyvern", label: "Wyvern" },
     ],
   },
   {
-    id: "category",
-    name: "Category",
+    id: "hero",
+    name: "Hero",
     options: [
-      { value: "new-arrivals", label: "All New Arrivals" },
-      { value: "tees", label: "Tees" },
-      { value: "crewnecks", label: "Crewnecks" },
-      { value: "sweatshirts", label: "Sweatshirts" },
-      { value: "pants-shorts", label: "Pants & Shorts" },
+      { value: "Ana", label: "Ana" },
+      { value: "Rein", label: "Rein" },
+      { value: "Genji", label: "Genji" },
+      { value: "Hanzo", label: "Hanzo" },
+      { value: "McCree", label: "McCree" },
     ],
   },
-  {
-    id: "sizes",
-    name: "Sizes",
-    options: [
-      { value: "xs", label: "XS" },
-      { value: "s", label: "S" },
-      { value: "m", label: "M" },
-      { value: "l", label: "L" },
-      { value: "xl", label: "XL" },
-      { value: "2xl", label: "2XL" },
-    ],
-  },
+  //   {
+  //     id: "sizes",
+  //     name: "Sizes",
+  //     options: [
+  //       { value: "xs", label: "XS" },
+  //       { value: "s", label: "S" },
+  //       { value: "m", label: "M" },
+  //       { value: "l", label: "L" },
+  //       { value: "xl", label: "XL" },
+  //       { value: "2xl", label: "2XL" },
+  //     ],
+  //   },
 ];
 
 const FilterModal = (props: Props) => {
@@ -127,6 +131,9 @@ const FilterModal = (props: Props) => {
                                       name={`${section.id}[]`}
                                       type="checkbox"
                                       className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                      onChange={(e) => {
+                                        console.log(e.target.value);
+                                      }}
                                     />
                                     <label
                                       htmlFor={`${section.id}-${optionIdx}-mobile`}
