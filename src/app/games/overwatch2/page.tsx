@@ -1,4 +1,5 @@
 import Clip from "@/app/components/Clip";
+import FilterModal from "@/app/components/FilterModal";
 import { sql } from "@vercel/postgres";
 
 export const dynamic = "force-dynamic";
@@ -16,6 +17,7 @@ const Overwatch2 = async (props: Props) => {
         <h2 className="text-lg text-white sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
           Overwatch 2
         </h2>
+        <FilterModal />
       </div>
       <div className="grid grid-cols-1 gap-x-2 gap-y-4 p-2 pb-5 md:grid-cols-2 xl:grid-cols-3">
         {rows.map((row) => (

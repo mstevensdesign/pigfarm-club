@@ -3,14 +3,20 @@
 import { useState } from "react";
 import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
 import { XMarkIcon } from "@heroicons/react/24/outline";
+import FilterBtn from "./FilterBtn";
 
 type Props = {};
 
 const FilterModal = (props: Props) => {
-  const [open, setOpen] = useState(true);
+  const [open, setOpen] = useState(false);
 
   return (
     <>
+      <FilterBtn
+        onClick={() => {
+          setOpen(true);
+        }}
+      />
       <Dialog open={open} onClose={setOpen} className="relative z-10">
         <div className="fixed inset-0" />
 
