@@ -1,11 +1,56 @@
 "use client";
 
 import { useState } from "react";
-import { Dialog, DialogPanel, DialogTitle } from "@headlessui/react";
-import { XMarkIcon } from "@heroicons/react/24/outline";
+import {
+  Dialog,
+  DialogPanel,
+  DialogTitle,
+  Disclosure,
+  DisclosureButton,
+  DisclosurePanel,
+} from "@headlessui/react";
+import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import FilterBtn from "./FilterBtn";
 
 type Props = {};
+
+const filters = [
+  {
+    id: "color",
+    name: "Color",
+    options: [
+      { value: "white", label: "White" },
+      { value: "beige", label: "Beige" },
+      { value: "blue", label: "Blue" },
+      { value: "brown", label: "Brown" },
+      { value: "green", label: "Green" },
+      { value: "purple", label: "Purple" },
+    ],
+  },
+  {
+    id: "category",
+    name: "Category",
+    options: [
+      { value: "new-arrivals", label: "All New Arrivals" },
+      { value: "tees", label: "Tees" },
+      { value: "crewnecks", label: "Crewnecks" },
+      { value: "sweatshirts", label: "Sweatshirts" },
+      { value: "pants-shorts", label: "Pants & Shorts" },
+    ],
+  },
+  {
+    id: "sizes",
+    name: "Sizes",
+    options: [
+      { value: "xs", label: "XS" },
+      { value: "s", label: "S" },
+      { value: "m", label: "M" },
+      { value: "l", label: "L" },
+      { value: "xl", label: "XL" },
+      { value: "2xl", label: "2XL" },
+    ],
+  },
+];
 
 const FilterModal = (props: Props) => {
   const [open, setOpen] = useState(false);
@@ -48,6 +93,55 @@ const FilterModal = (props: Props) => {
                   </div>
                   <div className="relative mt-6 flex-1 px-4 sm:px-6">
                     {/* Your content */}
+                    <form className="mt-4">
+                      {filters.map((section) => (
+                        <Disclosure
+                          key={section.name}
+                          as="div"
+                          className="border-t border-gray-200 pb-4 pt-4"
+                        >
+                          <fieldset>
+                            <legend className="w-full px-2">
+                              <DisclosureButton className="group flex w-full items-center justify-between p-2 text-gray-400 hover:text-gray-500">
+                                <span className="text-sm font-medium text-gray-900">
+                                  {section.name}
+                                </span>
+                                <span className="ml-6 flex h-7 items-center">
+                                  <ChevronDownIcon
+                                    aria-hidden="true"
+                                    className="h-5 w-5 rotate-0 transform group-data-[open]:-rotate-180"
+                                  />
+                                </span>
+                              </DisclosureButton>
+                            </legend>
+                            <DisclosurePanel className="px-4 pb-2 pt-4">
+                              <div className="space-y-6">
+                                {section.options.map((option, optionIdx) => (
+                                  <div
+                                    key={option.value}
+                                    className="flex items-center"
+                                  >
+                                    <input
+                                      defaultValue={option.value}
+                                      id={`${section.id}-${optionIdx}-mobile`}
+                                      name={`${section.id}[]`}
+                                      type="checkbox"
+                                      className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
+                                    />
+                                    <label
+                                      htmlFor={`${section.id}-${optionIdx}-mobile`}
+                                      className="ml-3 text-sm text-gray-500"
+                                    >
+                                      {option.label}
+                                    </label>
+                                  </div>
+                                ))}
+                              </div>
+                            </DisclosurePanel>
+                          </fieldset>
+                        </Disclosure>
+                      ))}
+                    </form>
                   </div>
                 </div>
               </DialogPanel>
