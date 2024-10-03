@@ -13,7 +13,7 @@ const Overwatch2 = async (props: Props) => {
   return (
     <>
       <div className="mx-6 mt-6 flex justify-between">
-        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+        <h2 className="text-lg text-white sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
           Overwatch 2
         </h2>
         <svg
@@ -21,8 +21,9 @@ const Overwatch2 = async (props: Props) => {
           fill="none"
           viewBox="0 0 24 24"
           strokeWidth={1.5}
-          stroke="currentColor"
-          className="size-6"
+          // stroke="currentColor"
+          stroke="white"
+          className="size-10"
         >
           <path
             strokeLinecap="round"
