@@ -4,7 +4,6 @@ import ReactPlayer from "react-player";
 import { useEffect, useState } from "react";
 
 type Props = {
-  key?: number;
   url?: string;
   author?: string;
   title?: string;
@@ -26,7 +25,7 @@ const Clip = (props: Props) => {
   }, []);
 
   return (
-    <div key={props.key} className={`card ${props.className}`}>
+    <div className={`card ${props.className}`}>
       <div className="rounded-lg bg-white p-4 shadow-md">
         {isMounted && (
           <ReactPlayer
