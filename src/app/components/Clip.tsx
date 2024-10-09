@@ -10,6 +10,7 @@ type Props = {
   description?: string;
   className?: string;
   date?: string;
+  controls?: boolean;
 };
 
 const Clip = (props: Props) => {
@@ -33,6 +34,7 @@ const Clip = (props: Props) => {
             className="aspect-video"
             width="100%"
             height="100%"
+            controls={props.controls}
           />
         )}
         <div className="mt-2 flex flex-col">

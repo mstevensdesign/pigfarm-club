@@ -23,6 +23,7 @@ const Overwatch2 = async (props: Props) => {
       <div className="grid grid-cols-1 gap-x-2 gap-y-4 p-2 pb-5 md:grid-cols-2 xl:grid-cols-3">
         {rows.map((row) => (
           <React.Fragment key={row.id}>
+            {/* Use Fragment to avoid adding extra div */}
             <Clip
               url={row.url}
               title={row.title}
@@ -30,6 +31,7 @@ const Overwatch2 = async (props: Props) => {
               date={row.date}
               author={row.author}
               className="mb-1 px-2"
+              controls
             />
           </React.Fragment>
         ))}
