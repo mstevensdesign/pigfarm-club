@@ -10,10 +10,7 @@ type Props = {
 };
 
 const page = async (props: Props) => {
-  let game = "";
-  if (props.params.game === "ow2") {
-    game = "overwatch2";
-  }
+  const { game } = props.params;
 
   const { rows } =
     await sql`SELECT * from CLIPS where game = ${game} ORDER BY id ASC`;
