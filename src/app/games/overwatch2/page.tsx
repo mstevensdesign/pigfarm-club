@@ -10,7 +10,7 @@ type Props = {};
 
 const Overwatch2 = async (props: Props) => {
   const { rows } =
-    await sql`SELECT * from CLIPS where game = 'overwatch2' ORDER BY id ASC`;
+    await sql`SELECT * from CLIPS where game = 'ow2' ORDER BY id ASC`;
 
   return (
     <>
