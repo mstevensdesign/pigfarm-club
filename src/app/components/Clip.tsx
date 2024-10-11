@@ -2,6 +2,15 @@
 
 import ReactPlayer from "react-player";
 import { useEffect, useState } from "react";
+import { Inter, Londrina_Solid, Maven_Pro } from "next/font/google";
+const londrina = Londrina_Solid({
+  subsets: ["latin"],
+  weight: ["400"],
+});
+const maven = Maven_Pro({
+  subsets: ["latin"],
+  weight: ["400"],
+});
 
 type Props = {
   url?: string;
@@ -40,7 +49,9 @@ const Clip = (props: Props) => {
         <div className="mt-2 flex flex-col">
           <div className="flex items-baseline justify-between">
             {props.title && (
-              <p className="text-sm font-semibold md:text-lg lg:text-xl">
+              <p
+                className={`${londrina.className} text-xl font-normal text-gray-600 md:text-2xl lg:text-3xl`}
+              >
                 {props.title}
               </p>
             )}
@@ -56,11 +67,11 @@ const Clip = (props: Props) => {
                 {props.author}
               </p>
             )}
-            {props.description && (
+            {/* {props.description && (
               <p className="text-xs font-light text-gray-600 md:text-sm lg:text-lg">
                 {props.description}
               </p>
-            )}
+            )} */}
           </div>
         </div>
       </div>
