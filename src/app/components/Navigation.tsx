@@ -118,7 +118,6 @@ export function Navigation() {
                 {products.map((item) => (
                   <div
                     key={item.name}
-                    // className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50"
                     className="group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-yellow-200"
                   >
                     <div className="flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-white group-hover:bg-yellow-50">
@@ -132,26 +131,10 @@ export function Navigation() {
                         {item.name}
                         <span className="absolute inset-0" />
                       </Link>
-                      {/* <p className="mt-1 text-gray-600">{item.description}</p> */}
                     </div>
                   </div>
                 ))}
               </div>
-              {/* <div className="grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50">
-                {callsToAction.map((item) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100"
-                  >
-                    <item.icon
-                      aria-hidden="true"
-                      className="h-5 w-5 flex-none text-gray-400"
-                    />
-                    {item.name}
-                  </a>
-                ))}
-              </div> */}
             </PopoverPanel>
           </Popover>
 
@@ -211,7 +194,6 @@ export function Navigation() {
                     />
                   </DisclosureButton>
                   <DisclosurePanel className="mt-2 space-y-2">
-                    {/* {[...products, ...callsToAction].map((item) => ( */}
                     {[...products].map((item) => (
                       <DisclosureButton
                         key={item.name}
