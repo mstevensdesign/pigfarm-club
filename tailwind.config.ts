@@ -1,3 +1,4 @@
+import { Londrina_Solid } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 const config: Config = {
@@ -8,6 +9,21 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        h1: "94px",
+        h2: "75px",
+        h3: "60px",
+        h4: "48px",
+        h5: "38px",
+        h6: "31px",
+        h7: "25px",
+        h8: "20px",
+        p: "16px",
+      },
+      fontFamily: {
+        Londrina_Solid: ["Londrina Solid", "cursive"],
+        maven: ["Maven Pro", "sans-serif"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":

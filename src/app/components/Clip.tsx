@@ -2,15 +2,6 @@
 
 import ReactPlayer from "react-player";
 import { useEffect, useState } from "react";
-import { Inter, Londrina_Solid, Maven_Pro } from "next/font/google";
-const londrina = Londrina_Solid({
-  subsets: ["latin"],
-  weight: ["400"],
-});
-const maven = Maven_Pro({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 type Props = {
   url?: string;
@@ -49,29 +40,14 @@ const Clip = (props: Props) => {
         <div className="mt-2 flex flex-col">
           <div className="flex items-baseline justify-between">
             {props.title && (
-              <p
-                className={`${londrina.className} text-xl font-normal text-gray-600 md:text-2xl lg:text-3xl`}
-              >
+              <p className={`font-Londrina_Solid text-h7 font-bold`}>
                 {props.title}
               </p>
             )}
-            {props.date && (
-              <p className="text-xs font-light text-gray-600 md:text-sm lg:text-lg">
-                {props.date}
-              </p>
-            )}
+            {props.date && <p className="">{props.date}</p>}
           </div>
           <div className="flex items-baseline justify-between">
-            {props.author && (
-              <p className="text-xs font-normal text-gray-600 md:text-sm lg:text-lg">
-                {props.author}
-              </p>
-            )}
-            {/* {props.description && (
-              <p className="text-xs font-light text-gray-600 md:text-sm lg:text-lg">
-                {props.description}
-              </p>
-            )} */}
+            {props.author && <p className="">{props.author}</p>}
           </div>
         </div>
       </div>
