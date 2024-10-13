@@ -12,7 +12,7 @@ const stats = [
 
 const AboutUs = (props: Props) => {
   return (
-    <div className="bg-yellow-400 py-24 sm:py-32">
+    <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto grid max-w-2xl grid-cols-1 items-start gap-x-8 gap-y-16 sm:gap-y-24 lg:mx-0 lg:max-w-none lg:grid-cols-2">
           <div className="lg:pr-4">
@@ -73,9 +73,7 @@ const AboutUs = (props: Props) => {
           </div>
           <div>
             <div className="text-base leading-7 text-gray-700 lg:max-w-lg">
-              <p className="text-base font-semibold leading-7 text-green-500">
-                Team values
-              </p>
+              <p className="text-base font-semibold leading-7">Team values</p>
               <h1 className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 On a mission to click heads
               </h1>
@@ -117,10 +115,7 @@ const AboutUs = (props: Props) => {
               ))}
             </dl>
             <div className="mt-10 flex">
-              <a
-                href="#"
-                className="text-base font-semibold leading-7 text-green-500"
-              >
+              <a href="#" className="text-base font-semibold leading-7">
                 Learn more about our company{" "}
                 <span aria-hidden="true">&rarr;</span>
               </a>
@@ -129,9 +124,6 @@ const AboutUs = (props: Props) => {
         </div>
       </div>
     </div>
-    // <div className="flex h-[calc(100vh-74px)] w-screen flex-col items-center justify-center">
-    //   <h1 className="text-5xl font-bold text-green-500">About Us</h1>
-    // </div>
   );
 };
 

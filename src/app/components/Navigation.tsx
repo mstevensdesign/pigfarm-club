@@ -102,7 +102,7 @@ export function Navigation() {
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-green-500">
+            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6">
               Games
               <ChevronDownIcon
                 aria-hidden="true"
@@ -128,10 +128,7 @@ export function Navigation() {
                       />
                     </div>
                     <div className="flex-auto">
-                      <Link
-                        href={item.href}
-                        className="block font-semibold text-green-500"
-                      >
+                      <Link href={item.href} className="block font-semibold">
                         {item.name}
                         <span className="absolute inset-0" />
                       </Link>
@@ -158,30 +155,18 @@ export function Navigation() {
             </PopoverPanel>
           </Popover>
 
-          <Link
-            href="/roster"
-            className="text-sm font-semibold leading-6 text-green-500"
-          >
+          <Link href="/roster" className="text-sm font-semibold leading-6">
             Roster
           </Link>
-          <Link
-            href="/aboutus"
-            className="text-sm font-semibold leading-6 text-green-500"
-          >
+          <Link href="/aboutus" className="text-sm font-semibold leading-6">
             About Us
           </Link>
-          <Link
-            href="/calendar"
-            className="text-sm font-semibold leading-6 text-green-500"
-          >
+          <Link href="/calendar" className="text-sm font-semibold leading-6">
             Calendar
           </Link>
         </PopoverGroup>
         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-          <a
-            href="#"
-            className="text-sm font-semibold leading-6 text-green-500"
-          >
+          <a href="#" className="text-sm font-semibold leading-6">
             Members <span aria-hidden="true">&rarr;</span>
           </a>
         </div>
@@ -218,7 +203,7 @@ export function Navigation() {
             <div className="-my-6 divide-y divide-gray-500/10">
               <div className="space-y-2 py-6">
                 <Disclosure as="div" className="-mx-3">
-                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-green-500 hover:bg-gray-50">
+                  <DisclosureButton className="group flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 hover:bg-gray-50">
                     Games
                     <ChevronDownIcon
                       aria-hidden="true"
