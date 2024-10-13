@@ -66,10 +66,10 @@ const Roster = (props: Props) => {
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Our Team
           </h2>
-          <p className="mt-6 text-lg leading-8 text-white">
+          <p className="mt-6 text-lg leading-8">
             We are a bunch of nerds who love gaming and building cool stuff.
           </p>
         </div>
@@ -86,11 +86,11 @@ const Roster = (props: Props) => {
                 width={200}
                 height={200}
               />
-              <h3 className="mt-6 text-lg font-semibold leading-8 tracking-tight text-white">
+              <h3 className="mt-6 text-lg font-semibold leading-8 tracking-tight">
                 {person.name}
               </h3>
-              <p className="text-base leading-7 text-white">{person.role}</p>
-              <p className="text-sm leading-6 text-white">{person.location}</p>
+              <p className="">{person.role}</p>
+              <p className="">{person.location}</p>
             </li>
           ))}
         </ul>

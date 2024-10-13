@@ -15,7 +15,7 @@ const Overwatch2 = async (props: Props) => {
   return (
     <>
       <div className="mx-6 mt-6 flex justify-between">
-        <h2 className="text-lg text-white sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
+        <h2 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl">
           Overwatch 2
         </h2>
         <FilterModal />
@@ -35,30 +35,6 @@ const Overwatch2 = async (props: Props) => {
             />
           </React.Fragment>
         ))}
-        {/* <Clip
-          url="https://www.youtube.com/watch?v=Smoz9J3ZSts"
-          title="Rip BANX"
-          description="This is a description"
-          date="2021-10-10"
-          author="@walk"
-          className="mb-1 px-2"
-        />
-        <Clip
-          url="https://www.youtube.com/watch?v=Smoz9J3ZSts"
-          title="Rip BANX"
-          description="This is a description"
-          date="2021-10-10"
-          author="@walk"
-          className="mb-1 px-2"
-        />
-        <Clip
-          url="https://www.youtube.com/watch?v=Smoz9J3ZSts"
-          title="Rip BANX"
-          description="This is a description"
-          date="2021-10-10"
-          author="@walk"
-          className="mb-1 px-2"
-        /> */}
       </div>
     </>
   );

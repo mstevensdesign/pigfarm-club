@@ -14,12 +14,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`font-maven bg-yellow-400`}>
+      <body className={``}>
         <Navigation />
-        <div>
-          {/* <div className="flex h-[calc(100vh-74px*2)] w-screen flex-col items-center justify-center"> */}
-          {children}
-        </div>
+        <div>{children}</div>
       </body>
     </html>
   );
