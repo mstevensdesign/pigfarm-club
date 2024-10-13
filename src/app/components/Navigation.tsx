@@ -217,7 +217,7 @@ export function Navigation() {
                         key={item.name}
                         as="a"
                         href={item.href}
-                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-green-600 hover:bg-gray-50"
+                        className="block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 hover:bg-gray-50"
                       >
                         {item.name}
                       </DisclosureButton>
@@ -226,21 +226,21 @@ export function Navigation() {
                 </Disclosure>
                 <Link
                   href="/roster"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-500 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Roster
                 </Link>
                 <Link
                   href="/aboutus"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-500 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   About Us
                 </Link>
                 <Link
                   href="/calendar"
-                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-green-500 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 hover:bg-gray-50"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   Calendar
@@ -249,7 +249,7 @@ export function Navigation() {
               <div className="py-6">
                 <a
                   href="#"
-                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-green-500 hover:bg-gray-50"
+                  className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 hover:bg-gray-50"
                 >
                   Members
                 </a>
