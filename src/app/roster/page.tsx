@@ -75,7 +75,7 @@ const Roster = (props: Props) => {
         </div>
         <ul
           role="list"
-          className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
+          className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
         >
           {people.map((person) => (
             <li key={person.name}>
@@ -86,7 +86,7 @@ const Roster = (props: Props) => {
                 width={200}
                 height={200}
               />
-              <h3 className="mt-6 text-lg font-semibold leading-8 tracking-tight">
+              <h3 className="mt-2 text-lg font-semibold leading-8 tracking-tight">
                 {person.name}
               </h3>
               <p className="">{person.role}</p>
