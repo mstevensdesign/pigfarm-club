@@ -39,9 +39,7 @@ const Clip = (props: Props) => {
         )}
         <div className="mt-2 flex flex-col">
           <div className="flex items-baseline justify-between">
-            {props.title && (
-              <p className={`font-Londrina_Solid`}>{props.title}</p>
-            )}
+            {props.title && <p className={``}>{props.title}</p>}
             {props.date && <p className="">{props.date}</p>}
           </div>
           <div className="flex items-baseline justify-between">
