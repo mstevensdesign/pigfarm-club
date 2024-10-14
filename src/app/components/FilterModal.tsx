@@ -58,6 +58,7 @@ const filters = [
 
 const FilterModal = (props: Props) => {
   const [open, setOpen] = useState(false);
+  const [filterItems, setFilterItems] = useState<string[]>([]);
 
   return (
     <>
@@ -132,7 +133,15 @@ const FilterModal = (props: Props) => {
                                       type="checkbox"
                                       className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                       onChange={(e) => {
-                                        console.log(e.target.value);
+                                        setFilterItems((prev) => {
+                                          if (e.target.checked) {
+                                            return [...prev, e.target.value];
+                                          } else {
+                                            return prev.filter(
+                                              (item) => item !== e.target.value,
+                                            );
+                                          }
+                                        });
                                       }}
                                     />
                                     <label
