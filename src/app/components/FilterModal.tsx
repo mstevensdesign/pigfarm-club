@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Dialog,
   DialogPanel,
@@ -59,6 +59,10 @@ const filters = [
 const FilterModal = (props: Props) => {
   const [open, setOpen] = useState(false);
   const [filterItems, setFilterItems] = useState<string[]>([]);
+
+  useEffect(() => {
+    console.log(filterItems);
+  }, [filterItems]);
 
   return (
     <>
