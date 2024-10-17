@@ -12,7 +12,9 @@ import {
 import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import FilterBtn from "./FilterBtn";
 
-type Props = {};
+type Props = {
+  handleClips: (clips: any[]) => void;
+};
 
 const filters = [
   {
@@ -61,7 +63,7 @@ const FilterModal = (props: Props) => {
   const [filterItems, setFilterItems] = useState<string[]>([]);
 
   useEffect(() => {
-    console.log(filterItems);
+    props.handleClips(filterItems);
   }, [filterItems]);
 
   return (
