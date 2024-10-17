@@ -5,13 +5,11 @@ import { getClips, getClipsByTag } from "../utils/utils";
 type Props = {};
 
 const ClipsPage = async (props: Props) => {
-  const clips_ow2 = await getClips("ow2");
-  const clips_by_tag = await getClipsByTag("ow2", ["walkblind"]);
+  const clips = await getClips();
 
   return (
     <div className="">
-      <ClipGrid clips={clips_ow2} game="Overwatch 2" />
-      <ClipGrid clips={clips_by_tag} game="Test" />
+      <ClipGrid clips={clips} game="Overwatch 2" />
     </div>
   );
 };

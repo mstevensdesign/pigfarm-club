@@ -13,6 +13,7 @@ import { ChevronDownIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import FilterBtn from "./FilterBtn";
 
 type Props = {
+  clips: any[];
   handleClips: (clips: any[]) => void;
 };
 
@@ -44,23 +45,11 @@ const filters = [
       { value: "McCree", label: "McCree" },
     ],
   },
-  //   {
-  //     id: "sizes",
-  //     name: "Sizes",
-  //     options: [
-  //       { value: "xs", label: "XS" },
-  //       { value: "s", label: "S" },
-  //       { value: "m", label: "M" },
-  //       { value: "l", label: "L" },
-  //       { value: "xl", label: "XL" },
-  //       { value: "2xl", label: "2XL" },
-  //     ],
-  //   },
 ];
 
 const FilterModal = (props: Props) => {
   const [open, setOpen] = useState(false);
-  const [filterItems, setFilterItems] = useState<string[]>([]);
+  const [filterItems, setFilterItems] = useState(props.clips);
 
   useEffect(() => {
     props.handleClips(filterItems);

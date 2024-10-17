@@ -1,6 +1,10 @@
 import { sql } from "@vercel/postgres";
 
-export async function getClips(game: string) {
+export async function getClips() {
+  const { rows } = await sql`SELECT * from CLIPS ORDER BY id ASC`;
+  return rows;
+}
+export async function getClipsByGame(game: string) {
   const { rows } =
     await sql`SELECT * from CLIPS where game = ${game} ORDER BY id ASC`;
   return rows;
