@@ -1,10 +1,10 @@
 "use client";
 
 import React from "react";
+import { useEffect, useState, useRef } from "react";
 import Clip from "./Clip";
 import FilterBtn from "./FilterBtn";
 import FilterModal from "./FilterModal";
-import { useEffect, useState } from "react";
 
 type Props = {
   clips: any[];
@@ -13,12 +13,7 @@ type Props = {
 
 const ClipGrid = (props: Props) => {
   const [clips, setClips] = useState(props.clips);
-
-  // const checks = [""];
-
-  // const filtered_clips = clips.filter((clip) =>
-  //   checks.some((check) => clip.players?.includes(check)),
-  // );
+  const clipsCache = useRef(props.clips);
 
   useEffect(() => {
     console.log(clips);
