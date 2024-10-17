@@ -8,7 +8,7 @@ import FilterModal from "./FilterModal";
 
 type Props = {
   clips: any[];
-  game: string;
+  title: string;
 };
 
 const ClipGrid = (props: Props) => {
@@ -22,13 +22,12 @@ const ClipGrid = (props: Props) => {
   return (
     <>
       <div className="sticky top-[74px] flex items-center justify-between bg-white px-5">
-        <h2 className="text-center text-2xl font-bold">{props.game}</h2>
-        {/* <FilterModal
-          handleClips={(newClips) =>
-            setClips((prevClips) => [...prevClips, ...newClips])
-          }
-        /> */}
-        <FilterModal clips={clips} handleClips={setClips} />
+        <h2 className="text-center text-2xl font-bold">{props.title}</h2>
+        <FilterModal
+          clips={clips}
+          handleClips={setClips}
+          clipsCache={clipsCache}
+        />
       </div>
       <div className="grid grid-cols-1 gap-x-2 gap-y-4 bg-white p-2 pb-5 md:grid-cols-2 xl:grid-cols-3">
         {clips.map((clip) => (

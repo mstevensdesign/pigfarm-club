@@ -9,7 +9,7 @@ const ClipsPage = async (props: Props) => {
 
   return (
     <div className="">
-      <ClipGrid clips={clips} game="Overwatch 2" />
+      <ClipGrid clips={clips} title="Overwatch 2" />
     </div>
   );
 };

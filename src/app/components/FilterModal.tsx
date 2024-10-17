@@ -14,10 +14,11 @@ import FilterBtn from "./FilterBtn";
 
 type Props = {
   clips: any[];
+  clipsCache?: React.MutableRefObject<any[]>;
   handleClips: (clips: any[]) => void;
 };
 
-const filters = [
+const filtersData = [
   {
     id: "player",
     name: "Player",
@@ -49,11 +50,20 @@ const filters = [
 
 const FilterModal = (props: Props) => {
   const [open, setOpen] = useState(false);
-  const [filterItems, setFilterItems] = useState(props.clips);
+  const [clips, setClips] = useState(props.clips);
+  const [filters, setFilters] = useState<string[]>([]);
+
+  // useEffect(() => {
+  //   props.handleClips(clips);
+  // }, [clips]);
 
   useEffect(() => {
-    props.handleClips(filterItems);
-  }, [filterItems]);
+    console.log("filters: ", filters);
+    console.log("clips: ", clips);
+    console.log("clipsCache: ", props.clipsCache?.current);
+    // setClips([]);
+    // props.handleClips(clips);
+  }, [filters]);
 
   return (
     <>
@@ -94,7 +104,7 @@ const FilterModal = (props: Props) => {
                   <div className="relative mt-6 flex-1 px-4 sm:px-6">
                     {/* Your content */}
                     <form className="mt-4">
-                      {filters.map((section) => (
+                      {filtersData.map((section) => (
                         <Disclosure
                           key={section.name}
                           as="div"
@@ -128,7 +138,7 @@ const FilterModal = (props: Props) => {
                                       type="checkbox"
                                       className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500"
                                       onChange={(e) => {
-                                        setFilterItems((prev) => {
+                                        setFilters((prev) => {
                                           if (e.target.checked) {
                                             return [...prev, e.target.value];
                                           } else {
