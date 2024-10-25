@@ -7,12 +7,6 @@ const config: Config = {
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    colors: {
-      transparent: "transparent",
-      current: "currentColor",
-      white: "#ffffff",
-      yellow: "#ffd564",
-    },
     extend: {
       fontSize: {
         h1: "94px",
@@ -24,6 +18,12 @@ const config: Config = {
         h7: "25px",
         h8: "20px",
         p: "16px",
+      },
+      colors: {
+        transparent: "transparent",
+        current: "currentColor",
+        white: "#ffffff",
+        yellow: "#ffd564",
       },
     },
   },
