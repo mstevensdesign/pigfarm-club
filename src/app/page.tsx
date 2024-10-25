@@ -1,5 +1,10 @@
 import Image from "next/image";
-
+import { Londrina_Solid } from "next/font/google";
+const londrina = Londrina_Solid({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 export default function Home() {
   return (
     <div>
@@ -8,11 +13,17 @@ export default function Home() {
           className="transition-all hover:scale-125"
           src="/taco-smile.png"
           alt="Taco Placeholder"
-          width={180}
-          height={37}
+          width={270}
+          height={0}
           priority
         />
-        <h2 className="">PigFarm Club</h2>
+        <h2 className={`text-h4 ${londrina.className}`}>PigFarm Club</h2>
+        <Image
+          src={"/arrow-down-circle.svg"}
+          alt="down arrow"
+          width={42}
+          height={0}
+        />
       </div>
     </div>
   );

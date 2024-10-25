@@ -21,7 +21,7 @@ const ClipGrid = (props: Props) => {
 
   return (
     <>
-      <div className="sticky top-[74px] flex items-center justify-between bg-white px-5">
+      <div className="sticky top-[74px] flex items-center justify-between px-5">
         <h2 className="text-center text-2xl font-bold">{props.title}</h2>
         <FilterModal
           clips={clips}
@@ -29,7 +29,7 @@ const ClipGrid = (props: Props) => {
           clipsCache={clipsCache}
         />
       </div>
-      <div className="grid grid-cols-1 gap-x-2 gap-y-4 bg-white p-2 pb-5 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-x-2 gap-y-4 p-2 pb-5 md:grid-cols-2 xl:grid-cols-3">
         {clips.map((clip) => (
           <React.Fragment key={clip.id}>
             {/* Use Fragment to avoid adding extra div */}
