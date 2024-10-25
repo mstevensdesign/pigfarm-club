@@ -14,6 +14,8 @@ import FilterBtn from "./FilterBtn";
 
 type Props = {
   clips: any[];
+  clipsCache?: React.MutableRefObject<any[]>;
+  handleClips: (clips: any[]) => void;
 };
 
 const filtersData = [
@@ -56,8 +58,9 @@ const FilterModal = (props: Props) => {
   // }, [clips]);
 
   useEffect(() => {
+    console.log("filters: ", filters);
     console.log("clips: ", clips);
-
+    console.log("clipsCache: ", props.clipsCache?.current);
     // setClips([]);
     // props.handleClips(clips);
   }, [filters]);
