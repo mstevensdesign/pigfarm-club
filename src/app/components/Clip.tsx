@@ -2,6 +2,13 @@
 
 import ReactPlayer from "react-player";
 import { useEffect, useState } from "react";
+import { Maven_Pro } from "next/font/google";
+
+const maven = Maven_Pro({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
 
 type Props = {
   url?: string;
@@ -26,8 +33,8 @@ const Clip = (props: Props) => {
   }, []);
 
   return (
-    <div className={`card ${props.className}`}>
-      <div className="rounded-lg bg-white p-4 shadow-md">
+    <div className={`card ${props.className} ${maven.className}`}>
+      <div className="rounded-lg bg-white shadow-md">
         {isMounted && (
           <ReactPlayer
             url={props.url}
@@ -39,11 +46,13 @@ const Clip = (props: Props) => {
         )}
         <div className="mt-2 flex flex-col">
           <div className="flex items-baseline justify-between">
-            {props.title && <p className="">{props.title}</p>}
-            {props.date && <p className="">{props.date}</p>}
+            {props.title && (
+              <p className={`text-[20px] font-[700]`}>{props.title}</p>
+            )}
           </div>
           <div className="flex items-baseline justify-between">
             {props.author && <p className="">{props.author}</p>}
+            {props.date && <p className="">{props.date}</p>}
           </div>
         </div>
       </div>
