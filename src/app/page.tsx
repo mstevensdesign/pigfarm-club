@@ -20,12 +20,12 @@ export default function Home() {
         <h2 className={`text-h4 ${londrina.className} text-green -mt-16`}>
           PigFarm Club
         </h2>
-        <Image
+        {/* <Image
           src={"/arrow-down-circle.svg"}
           alt="down arrow"
           width={42}
           height={0}
-        />
+        /> */}
       </div>
     </div>
   );
