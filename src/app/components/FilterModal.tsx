@@ -69,7 +69,7 @@ const FilterModal = (props: Props) => {
           setOpen(true);
         }}
       />
-      <Dialog open={open} onClose={setOpen} className="relative z-10">
+      <Dialog open={open} onClose={setOpen} className="relative z-30">
         <div className="fixed inset-0" />
 
         <div className="fixed inset-0 overflow-hidden">
