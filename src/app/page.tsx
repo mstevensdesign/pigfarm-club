@@ -17,7 +17,9 @@ export default function Home() {
           height={0}
           priority
         />
-        <h2 className={`text-h4 ${londrina.className} -mt-16`}>PigFarm Club</h2>
+        <h2 className={`text-h4 ${londrina.className} text-green -mt-16`}>
+          PigFarm Club
+        </h2>
         <Image
           src={"/arrow-down-circle.svg"}
           alt="down arrow"

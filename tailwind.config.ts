@@ -24,6 +24,7 @@ const config: Config = {
         current: "currentColor",
         white: "#ffffff",
         yellow: "#ffd564",
+        green: "#1e6d28",
       },
     },
   },
