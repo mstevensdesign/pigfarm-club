@@ -8,7 +8,7 @@ const londrina = Londrina_Solid({
 export default function Home() {
   return (
     <div>
-      <div className="-gap-y-5 flex h-[calc(100vh-74px*2)] w-screen flex-col items-center justify-center">
+      <div className="flex h-[calc(100vh-74px*3)] w-screen flex-col items-center justify-center">
         <Image
           className="transition-all hover:scale-125"
           src="/taco-bon.svg"
