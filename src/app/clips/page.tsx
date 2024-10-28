@@ -20,11 +20,11 @@ const ClipsPage = async (props: Props) => {
             placeholder="Search clips..."
           />
           <MagnifyingGlassIcon className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
+          <button className="absolute right-3 top-2 rounded-md text-white focus:outline-none focus:ring-2 focus:ring-slate-500">
+            {/* Filter */}
+            <FilterModal clips={clips} />
+          </button>
         </div>
-        <button className="ml-2 rounded-md p-2 text-white hover:bg-slate-600 focus:outline-none focus:ring-2 focus:ring-slate-500">
-          {/* Filter */}
-          <FilterModal clips={clips} />
-        </button>
       </div>
       <ClipGrid clips={clips} title="Overwatch 2" />
       <ClipGrid clips={clips} title="Castle Crashers" />
