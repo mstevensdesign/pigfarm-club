@@ -132,7 +132,7 @@ export function Navigation() {
               <span className="sr-only">PigFarm Club</span>
               <Image
                 className="transition-all hover:scale-125"
-                src="/taco-smile.png"
+                src="/taco-bon.svg"
                 alt="Taco Placeholder"
                 width={38}
                 height={32}
