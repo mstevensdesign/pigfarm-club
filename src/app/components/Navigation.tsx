@@ -72,7 +72,7 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-yellow sticky top-0">
+    <header className="sticky top-0 bg-yellow">
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -82,7 +82,7 @@ export function Navigation() {
             <span className="sr-only">PigFarm Club</span>
             <Image
               className="transition-all hover:scale-125"
-              src="/taco-smile.png"
+              src="/taco-bon.svg"
               alt="Taco Placeholder"
               width={38}
               height={32}

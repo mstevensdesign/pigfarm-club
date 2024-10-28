@@ -11,7 +11,7 @@ export default function Home() {
       <div className="flex h-[calc(100vh-74px*2)] w-screen flex-col items-center justify-center">
         <Image
           className="transition-all hover:scale-125"
-          src="/taco-smile.png"
+          src="/taco-bon.svg"
           alt="Taco Placeholder"
           width={270}
           height={0}
