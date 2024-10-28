@@ -17,6 +17,7 @@ type Props = {
   description?: string;
   className?: string;
   date?: string;
+  game?: string;
   controls?: boolean;
 };
 
@@ -44,15 +45,32 @@ const Clip = (props: Props) => {
             controls={props.controls}
           />
         )}
-        <div className="mt-2 flex flex-col">
-          <div className="flex items-baseline justify-between">
-            {props.title && (
-              <p className={`text-[20px] font-[700]`}>{props.title}</p>
-            )}
+        <div className="flex items-center justify-between p-2">
+          <div className="flex flex-col justify-center gap-y-1 p-2 align-middle">
+            <div className="">
+              {props.title && (
+                <p className={`text-[20px] font-[700]`}>{props.title}</p>
+              )}
+            </div>
+            <div className="flex gap-x-1">
+              {props.author && <p className="">{props.author}</p>}
+              <p>&bull;</p>
+              {props.date && <p className="">{props.date}</p>}
+            </div>
+            <div className="">
+              {props.game && (
+                <span className="rounded-lg bg-[#93C63E] p-1 text-white">
+                  {props.game}
+                </span>
+              )}
+            </div>
           </div>
-          <div className="flex items-baseline justify-between">
-            {props.author && <p className="">{props.author}</p>}
-            {props.date && <p className="">{props.date}</p>}
+          <div className="">
+            <img
+              alt=""
+              src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+              className="inline-block h-14 w-14 rounded-full"
+            />
           </div>
         </div>
       </div>

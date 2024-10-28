@@ -10,7 +10,7 @@ const ClipsPage = async (props: Props) => {
   const clips = await getClips();
 
   return (
-    <div className="bg-slate-500">
+    <div className="">
       <div className="sticky top-[16px] mb-4 flex justify-center">
         <div className="relative w-full max-w-md">
           <input

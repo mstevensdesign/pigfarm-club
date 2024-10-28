@@ -41,6 +41,8 @@ const ClipGrid = (props: Props) => {
               author={clip.author}
               className="mb-1"
               controls
+              // game={clip.game}
+              game="Overwatch 2"
             />
           </React.Fragment>
         ))}
