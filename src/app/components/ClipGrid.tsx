@@ -39,7 +39,7 @@ const ClipGrid = (props: Props) => {
               description={clip.description}
               date={clip.date}
               author={clip.author}
-              className="mb-1"
+              className=""
               controls
               // game={clip.game}
               game="Overwatch 2"

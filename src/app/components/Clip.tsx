@@ -45,8 +45,8 @@ const Clip = (props: Props) => {
             controls={props.controls}
           />
         )}
-        <div className="flex items-center justify-between p-2">
-          <div className="flex flex-col justify-center gap-y-1 p-2 align-middle">
+        <div className="flex items-center justify-between px-2 pb-1">
+          <div className="flex flex-col justify-center gap-y-1 align-middle">
             <div className="">
               {props.title && (
                 <p className={`text-[20px] font-[700]`}>{props.title}</p>
