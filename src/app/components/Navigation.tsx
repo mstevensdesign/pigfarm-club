@@ -33,6 +33,8 @@ import {
 
 import { Maven_Pro } from "next/font/google";
 
+import { usePathname } from "next/navigation";
+
 const maven = Maven_Pro({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
@@ -78,6 +80,7 @@ const callsToAction = [
 
 export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   return (
     <header
@@ -111,16 +114,28 @@ export function Navigation() {
           </button>
         </div>
         <PopoverGroup className="text-green hidden rounded-2xl bg-white px-10 py-2 shadow-lg lg:flex lg:gap-x-12">
-          <Link href="/clips" className="text-sm font-semibold leading-6">
+          <Link
+            href="/clips"
+            className={`text-sm font-semibold leading-6 hover:underline ${pathname === "/clips" ? "underline" : ""}`}
+          >
             CLIPS
           </Link>
-          <Link href="/roster" className="text-sm font-semibold leading-6">
+          <Link
+            href="/roster"
+            className={`text-sm font-semibold leading-6 hover:underline ${pathname === "/roster" ? "underline" : ""}`}
+          >
             ROSTER
           </Link>
-          <Link href="/aboutus" className="text-sm font-semibold leading-6">
+          <Link
+            href="/aboutus"
+            className={`text-sm font-semibold leading-6 hover:underline ${pathname === "/aboutus" ? "underline" : ""}`}
+          >
             ABOUT US
           </Link>
-          <Link href="/calendar" className="text-sm font-semibold leading-6">
+          <Link
+            href="/calendar"
+            className={`text-sm font-semibold leading-6 hover:underline ${pathname === "/calendar" ? "underline" : ""}`}
+          >
             CALENDAR
           </Link>
         </PopoverGroup>
