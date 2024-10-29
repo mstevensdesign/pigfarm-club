@@ -29,7 +29,7 @@ const ClipGrid = (props: Props) => {
           clipsCache={clipsCache}
         />
       </div> */}
-      <div className="grid grid-cols-1 gap-x-2 gap-y-4 pb-5 md:grid-cols-2 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-x-2 gap-y-4 pb-5 md:grid-cols-2 md:px-6 xl:grid-cols-3">
         {clips.map((clip) => (
           <React.Fragment key={clip.id}>
             {/* Use Fragment to avoid adding extra div */}
