@@ -31,18 +31,18 @@ const ClipGrid = (props: Props) => {
       </div> */}
       <div className="grid grid-cols-1 gap-x-2 gap-y-4 pb-5 md:grid-cols-2 xl:grid-cols-3">
         {clips.map((clip) => (
-          <React.Fragment key={clip.id}>
+          <React.Fragment key={clip.clip_id}>
             {/* Use Fragment to avoid adding extra div */}
             <Clip
-              url={clip.url}
-              title={clip.title}
-              description={clip.description}
-              date={clip.date}
-              author={clip.author}
+              url={clip.clip_url}
+              title={clip.clip_title}
+              description={clip.clip_description}
+              date={clip.clip_date}
+              author={clip.user_display_name}
+              game={clip.game_title}
+              profile_url={clip.profile_url}
               className=""
               controls
-              // game={clip.game}
-              game="Overwatch 2"
             />
           </React.Fragment>
         ))}

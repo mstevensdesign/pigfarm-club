@@ -8,6 +8,7 @@ type Props = {};
 
 const ClipsPage = async (props: Props) => {
   const clips = await getClipsByGame(1);
+  console.log("FART: ", clips);
 
   return (
     <div className="">
@@ -27,7 +28,7 @@ const ClipsPage = async (props: Props) => {
         </div>
       </div>
       <ClipGrid clips={clips} title="Overwatch 2" />
-      <ClipGrid clips={clips} title="Castle Crashers" />
+      {/* <ClipGrid clips={clips} title="Castle Crashers" /> */}
     </div>
   );
 };
