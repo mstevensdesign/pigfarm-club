@@ -41,6 +41,7 @@ const ClipGrid = (props: Props) => {
               author={clip.user_display_name}
               game={clip.game_title}
               profile_url={clip.profile_url}
+              user_id={clip.user_id}
               className=""
               controls
             />
