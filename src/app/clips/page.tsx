@@ -12,7 +12,7 @@ const ClipsPage = async (props: Props) => {
   return (
     <div className="">
       {/* <div className="sticky top-[16px] mb-4 flex justify-center"> */}
-      <div className="mb-4 flex justify-center">
+      <div className="mb-4 mt-1 flex justify-center px-6">
         <div className="relative w-full max-w-md">
           <input
             type="text"
