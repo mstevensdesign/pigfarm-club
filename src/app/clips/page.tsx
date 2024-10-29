@@ -4,6 +4,9 @@ import { getClips, getClipsByTag, getClipsByGame } from "../utils/utils";
 import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import FilterModal from "../components/FilterModal";
 
+export const fetchCache = "force-no-store";
+export const dynamic = "force-dynamic";
+
 type Props = {};
 
 const ClipsPage = async (props: Props) => {
