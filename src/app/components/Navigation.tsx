@@ -31,6 +31,14 @@ import {
   PlayCircleIcon,
 } from "@heroicons/react/20/solid";
 
+import { Maven_Pro } from "next/font/google";
+
+const maven = Maven_Pro({
+  weight: ["400", "500", "700"],
+  subsets: ["latin"],
+  display: "swap",
+});
+
 const products = [
   {
     name: "Overwatch 2",
@@ -72,7 +80,9 @@ export function Navigation() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-20 bg-yellow">
+    <header
+      className={`bg-yellow sticky top-0 z-20 ${maven.className} text-green`}
+    >
       <nav
         aria-label="Global"
         className="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8"
@@ -100,21 +110,21 @@ export function Navigation() {
             <Bars3Icon aria-hidden="true" className="h-6 w-6" />
           </button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12">
+        <PopoverGroup className="text-green hidden rounded-2xl bg-white px-10 py-2 shadow-lg lg:flex lg:gap-x-12">
           <Link href="/clips" className="text-sm font-semibold leading-6">
-            Clips
+            CLIPS
           </Link>
           <Link href="/roster" className="text-sm font-semibold leading-6">
-            Roster
+            ROSTER
           </Link>
           <Link href="/aboutus" className="text-sm font-semibold leading-6">
-            About Us
+            ABOUT US
           </Link>
           <Link href="/calendar" className="text-sm font-semibold leading-6">
-            Calendar
+            CALENDAR
           </Link>
         </PopoverGroup>
-        <div className="hidden lg:flex lg:flex-1 lg:justify-end">
+        <div className="text-green hidden lg:flex lg:flex-1 lg:justify-end">
           <a href="#" className="text-sm font-semibold leading-6">
             Members <span aria-hidden="true">&rarr;</span>
           </a>
@@ -123,7 +133,7 @@ export function Navigation() {
       <Dialog
         open={mobileMenuOpen}
         onClose={setMobileMenuOpen}
-        className="lg:hidden"
+        className="text-green lg:hidden"
       >
         <div className="fixed inset-0 z-10" />
         <DialogPanel className="fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
