@@ -8,6 +8,7 @@ const User = (props: Props) => {
     <div>
       <p>User ID: {props.user?.id}</p>
       <p>User Name: {props.user?.first_name}</p>
+      <img className="max-w-96" src={props.user?.profile_url} alt="avatar" />
     </div>
   );
 };
