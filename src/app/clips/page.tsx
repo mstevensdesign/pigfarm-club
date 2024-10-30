@@ -4,6 +4,9 @@ import { getClips, getClipsByTag, getClipsByGame } from "../utils/utils";
 import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import FilterModal from "../components/FilterModal";
 
+export const fetchCache = "force-no-store";
+export const dynamic = "force-dynamic";
+
 type Props = {};
 
 const ClipsPage = async (props: Props) => {
@@ -13,7 +16,7 @@ const ClipsPage = async (props: Props) => {
   return (
     <div className="">
       {/* <div className="sticky top-[16px] mb-4 flex justify-center"> */}
-      <div className="mb-4 flex justify-center">
+      <div className="mb-4 mt-1 flex justify-center px-6">
         <div className="relative w-full max-w-md">
           <input
             type="text"

@@ -82,7 +82,7 @@ const Clip = (props: Props) => {
                 alt=""
                 src={props.profile_url}
                 // src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                className="outline-yellow inline-block h-14 w-14 rounded-full hover:outline"
+                className="inline-block h-14 w-14 rounded-full outline-yellow hover:outline"
               />
             </Link>
           </div>
