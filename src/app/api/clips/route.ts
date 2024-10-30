@@ -1,6 +1,4 @@
 import { sql } from "@vercel/postgres";
-export const fetchCache = "force-no-store";
-export const dynamic = "force-dynamic";
 
 export async function GET() {
   const data = { user_id: 1 };
