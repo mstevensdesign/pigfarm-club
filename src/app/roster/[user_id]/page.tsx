@@ -43,7 +43,13 @@ const UserPage = (props: Props) => {
   console.log(data);
   return (
     <div className="grid h-[calc(100vh-74px)] place-content-center">
-      <User user={data} />
+      {loading ? (
+        <p>Loading...</p>
+      ) : error ? (
+        <p>Error: {error}</p>
+      ) : (
+        <User user={data} />
+      )}
     </div>
   );
 };

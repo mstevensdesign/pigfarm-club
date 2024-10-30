@@ -3,7 +3,6 @@ type Props = {
 };
 
 const User = (props: Props) => {
-  console.log("faart", props.user);
   return (
     <div>
       <p>User ID: {props.user?.id}</p>
