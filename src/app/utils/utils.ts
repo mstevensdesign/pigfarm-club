@@ -35,3 +35,9 @@ export async function getClipsByTag(game: string, tags: string[]) {
     await sql`SELECT * FROM clips WHERE game = ${game} AND 'walkblind' = ANY(players)`;
   return rows;
 }
+
+export async function getUserById(user_id: number) {
+  const { rows } =
+    await sql`SELECT * FROM users WHERE id = ${user_id} ORDER BY id ASC`;
+  return rows;
+}
