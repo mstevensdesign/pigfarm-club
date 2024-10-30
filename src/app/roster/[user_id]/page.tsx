@@ -10,20 +10,40 @@ const UserPage = (props: Props) => {
   const params = useParams();
   const user_id = params?.user_id ? Number(params.user_id) : null;
 
-  const [user, setUser] = useState(null);
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (user_id) {
-      fetch(`/api/users/${user_id}`)
-        .then((res) => res.json())
-        .then((data) => setUser(data));
-    }
-  }, [user_id]);
+    // Define an async function inside useEffect
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/users/" + user_id);
 
-  console.log(user);
+        if (!response.ok) {
+          throw new Error(`Error: ${response.statusText}`);
+        }
+
+        const result = await response.json();
+        setData(result[0]);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError(String(err));
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    // Call the async function
+    fetchData();
+  }, []); // Empty dependency array means this runs once after the initial render
+  console.log(data);
   return (
     <div className="grid h-[calc(100vh-74px)] place-content-center">
-      <User user={user} />
+      <User user={data} />
     </div>
   );
 };
