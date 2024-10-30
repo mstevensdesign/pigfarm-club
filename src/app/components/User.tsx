@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { getUserById } from "../utils/utils";
-
 type Props = {
-  user_id: number | null;
+  user: any;
 };
 
 const User = (props: Props) => {
+  console.log("faart", props.user);
   return (
     <div>
-      <p>User ID: {props.user_id}</p>
+      <p>User ID: {props.user[0]?.id}</p>
+      <p>User Name: {props.user[0]?.first_name}</p>
     </div>
   );
 };
