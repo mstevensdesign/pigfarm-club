@@ -82,17 +82,17 @@ type Props = {
 
 const User = (props: Props) => {
   return (
-    <div className="flex flex-col items-center lg:flex-row">
+    <div className="">
       <img
-        className="w-36 rounded-md object-cover"
+        className="rounded-md object-cover"
         src={props.user?.profile_url}
         alt="avatar"
       />
-      <div className="flex flex-col items-center bg-pink-300 lg:items-start">
+      <div className="">
         <div className={`${londrina.className} text-h6 text-green`}>
           {props.user?.display_name}
         </div>
-        <div className="flex flex-col items-center lg:items-start">
+        <div className="">
           <div className="">{`${props.user?.pronouns}`}</div>
           <div className="">{`${props.user?.dob}`}</div>
         </div>
