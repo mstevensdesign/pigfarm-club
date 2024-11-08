@@ -58,7 +58,7 @@ const UserPage = (props: Props) => {
       ) : error ? (
         <p>Error: {error}</p>
       ) : (
-        <div className="mx-auto max-w-5xl">
+        <div className="">
           <User user={data} />
           {/* <ClipGrid clips={clips} title="Overwatch 2" /> */}
         </div>

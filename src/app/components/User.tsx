@@ -80,32 +80,69 @@ type Props = {
 //   );
 // };
 
+// const User = (props: Props) => {
+//   return (
+//     <div className="mx-auto flex max-w-2xl flex-col items-center gap-x-5 bg-pink-300 lg:flex-row">
+//       <img
+//         className="w-40 rounded-md object-cover lg:w-36"
+//         src={props.user?.profile_url}
+//         alt="avatar"
+//       />
+//       <div className="flex flex-col items-center justify-between lg:items-start">
+//         <div className={`${londrina.className} text-h6 text-green`}>
+//           {props.user?.display_name}
+//         </div>
+//         <div className="flex flex-col items-center gap-1 lg:flex-row">
+//           <div className="">{`${props.user?.pronouns}`}</div>
+//           <div className="">{`${props.user?.dob}`}</div>
+//         </div>
+
+//         <div className={`${maven.className}`}>{props.user?.description}</div>
+//       </div>
+//     </div>
+//   );
+// };
+
 const User = (props: Props) => {
   return (
-    <div className="mx-auto flex max-w-2xl flex-col items-center gap-x-5 bg-pink-300 lg:flex-row">
-      <img
-        className="w-40 rounded-md object-cover lg:w-36"
-        src={props.user?.profile_url}
-        alt="avatar"
-      />
-      <div className="flex flex-col items-center justify-between lg:items-start">
-        <div className={`${londrina.className} text-h6 text-green`}>
-          {props.user?.display_name}
-        </div>
-        <div className="flex flex-col items-center gap-1 lg:flex-row">
-          <div className="">{`${props.user?.pronouns}`}</div>
-          <div className="">{`${props.user?.dob}`}</div>
-        </div>
+    <>
+      <Avatar user={props.user} />
+      <DisplayName user={props.user} />
+      <Pronouns user={props.user} />
+      <Age user={props.user} />
+      <Description user={props.user} />
+    </>
+  );
+};
 
-        <div className={`${maven.className}`}>{props.user?.description}</div>
-      </div>
+const Avatar = (props: Props) => {
+  return (
+    <img
+      className="w-40 rounded-md object-cover lg:w-36"
+      src={props.user?.profile_url}
+      alt="avatar"
+    />
+  );
+};
+
+const DisplayName = (props: Props) => {
+  return (
+    <div className={`${londrina.className} text-h6 text-green`}>
+      {props.user?.display_name}
     </div>
   );
 };
 
-type DescriptionProps = {};
-const Description = (props: DescriptionProps) => {
-  return <p>description</p>;
+const Pronouns = (props: Props) => {
+  return <div className="">{`${props.user?.pronouns}`}</div>;
+};
+
+const Age = (props: Props) => {
+  return <div className="">{`${props.user?.dob}`}</div>;
+};
+
+const Description = (props: Props) => {
+  return <div className={`${maven.className}`}>{props.user?.description}</div>;
 };
 
 export default User;
