@@ -3,6 +3,13 @@
 import { useParams } from "next/navigation";
 import React, { use, useEffect, useState } from "react";
 import User from "@/app/components/User";
+import { Londrina_Solid } from "next/font/google";
+import ClipGrid from "@/app/components/ClipGrid";
+const londrina = Londrina_Solid({
+  weight: "400",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 type Props = {};
 
@@ -42,16 +49,33 @@ const UserPage = (props: Props) => {
   }, []); // Empty dependency array means this runs once after the initial render
   console.log(data);
   return (
-    <div className="grid h-[calc(100vh-74px)] place-content-center">
+    <div className="text-green">
+      <div className={`text-h4 ${londrina.className} text-center text-green`}>
+        MEMBER PAGE
+      </div>
       {loading ? (
         <p>Loading...</p>
       ) : error ? (
         <p>Error: {error}</p>
       ) : (
-        <User user={data} />
+        <div className="mx-auto max-w-5xl">
+          <User user={data} />
+          {/* <ClipGrid clips={clips} title="Overwatch 2" /> */}
+        </div>
       )}
     </div>
   );
+  // return (
+  //   <div className="grid h-[calc(100vh-74px)] place-content-center">
+  //     {loading ? (
+  //       <p>Loading...</p>
+  //     ) : error ? (
+  //       <p>Error: {error}</p>
+  //     ) : (
+  //       <User user={data} />
+  //     )}
+  //   </div>
+  // );
 };
 
 export default UserPage;
