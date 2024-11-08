@@ -49,7 +49,7 @@ const UserPage = (props: Props) => {
   }, []); // Empty dependency array means this runs once after the initial render
   console.log(data);
   return (
-    <div className="text-green">
+    <div className="px-10 text-green">
       <div className={`text-h4 ${londrina.className} text-center text-green`}>
         MEMBER PAGE
       </div>

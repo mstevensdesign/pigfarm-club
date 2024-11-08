@@ -23,7 +23,7 @@ const User = (props: Props) => {
       <div className="flex gap-10">
         {/* <h1>MEMBER PAGE</h1> */}
         <img
-          className="aspect-square h-40 w-40 rounded-md"
+          className="w-32 rounded-md object-cover"
           src={props.user?.profile_url}
           alt="avatar"
         />
