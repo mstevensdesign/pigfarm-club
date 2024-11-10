@@ -11,7 +11,9 @@ const londrina = Londrina_Solid({
   display: "swap",
 });
 
-type Props = {};
+type Props = {
+  title: string;
+};
 
 const UserPage = (props: Props) => {
   const params = useParams();
@@ -28,7 +30,7 @@ const UserPage = (props: Props) => {
         const response = await fetch("/api/users/" + user_id);
 
         if (!response.ok) {
-          throw new Error(`Error: ${response.statusText}`);
+          throw new Error(response.statusText);
         }
 
         const result = await response.json();
@@ -37,7 +39,7 @@ const UserPage = (props: Props) => {
         if (err instanceof Error) {
           setError(err.message);
         } else {
-          setError(String(err));
+          setError("An unknown error occurred");
         }
       } finally {
         setLoading(false);
@@ -49,19 +51,14 @@ const UserPage = (props: Props) => {
   }, []); // Empty dependency array means this runs once after the initial render
   console.log(data);
   return (
-    <div className="px-10 text-green">
-      <div className={`text-h4 ${londrina.className} text-center text-green`}>
-        MEMBER PAGE
-      </div>
+    <div className="mx-auto max-w-2xl bg-pink-300">
+      <Title title="Member Page" />
       {loading ? (
-        <p>Loading...</p>
+        <Loader />
       ) : error ? (
-        <p>Error: {error}</p>
+        <ErrorComponent error={error} />
       ) : (
-        <div className="">
-          <User user={data} />
-          {/* <ClipGrid clips={clips} title="Overwatch 2" /> */}
-        </div>
+        <User user={data} />
       )}
     </div>
   );
@@ -79,3 +76,19 @@ const UserPage = (props: Props) => {
 };
 
 export default UserPage;
+
+const Title = (props: Props) => {
+  return (
+    <div className={`text-h4 ${londrina.className} text-center text-green`}>
+      {props.title}
+    </div>
+  );
+};
+
+const Loader = () => {
+  return <p>Loading...</p>;
+};
+
+const ErrorComponent = (props: { error: string }) => {
+  return <p>Error: {props.error}</p>;
+};
