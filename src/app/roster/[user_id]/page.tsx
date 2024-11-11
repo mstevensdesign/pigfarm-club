@@ -58,24 +58,24 @@ const UserPage = (props: Props) => {
       ) : error ? (
         <ErrorComponent error={error} />
       ) : (
-        <User user={data} />
+        <>
+          <User user={data} />
+          <Clips user_id={data.id} />
+        </>
       )}
     </div>
   );
-  // return (
-  //   <div className="grid h-[calc(100vh-74px)] place-content-center">
-  //     {loading ? (
-  //       <p>Loading...</p>
-  //     ) : error ? (
-  //       <p>Error: {error}</p>
-  //     ) : (
-  //       <User user={data} />
-  //     )}
-  //   </div>
-  // );
 };
 
 export default UserPage;
+
+const Clips = (props: { user_id: number }) => {
+  useEffect(() => {
+    console.log("Fetching clips for user", props.user_id);
+  }, []);
+
+  return <div className="mx-auto max-w-2xl">CLIPPIES {props.user_id}</div>;
+};
 
 const Title = () => {
   return (
