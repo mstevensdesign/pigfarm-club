@@ -1,7 +1,8 @@
 import { londrina, maven } from "../utils/fonts";
+import { TUser } from "../utils/types";
 
 type Props = {
-  user: any;
+  user: TUser;
 };
 
 const User = (props: Props) => {
