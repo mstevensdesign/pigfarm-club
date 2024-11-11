@@ -51,7 +51,7 @@ const UserPage = (props: Props) => {
   }, []); // Empty dependency array means this runs once after the initial render
   console.log(data);
   return (
-    <div className="mx-auto max-w-2xl bg-pink-300">
+    <div className="mx-auto max-w-2xl">
       <Title title="Member Page" />
       {loading ? (
         <Loader />
@@ -86,7 +86,11 @@ const Title = (props: Props) => {
 };
 
 const Loader = () => {
-  return <p>Loading...</p>;
+  return (
+    <div className="grid h-[calc(100vh-160px)] place-content-center">
+      <div className="border-green-500 h-32 w-32 animate-spin rounded-full border-b-2 border-t-2"></div>
+    </div>
+  );
 };
 
 const ErrorComponent = (props: { error: string }) => {
