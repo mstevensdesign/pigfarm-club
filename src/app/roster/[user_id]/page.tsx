@@ -11,9 +11,7 @@ const londrina = Londrina_Solid({
   display: "swap",
 });
 
-type Props = {
-  title: string;
-};
+type Props = {};
 
 const UserPage = (props: Props) => {
   const params = useParams();
@@ -52,7 +50,7 @@ const UserPage = (props: Props) => {
   console.log(data);
   return (
     <div className="mx-auto max-w-2xl">
-      <Title title="Member Page" />
+      <Title />
       {loading ? (
         <Loader />
       ) : error ? (
@@ -77,10 +75,10 @@ const UserPage = (props: Props) => {
 
 export default UserPage;
 
-const Title = (props: Props) => {
+const Title = () => {
   return (
     <div className={`text-h4 ${londrina.className} text-center text-green`}>
-      {props.title}
+      Member Page
     </div>
   );
 };
