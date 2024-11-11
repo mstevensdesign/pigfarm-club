@@ -5,6 +5,8 @@ import React, { use, useEffect, useState } from "react";
 import User from "@/app/components/User";
 import { Londrina_Solid } from "next/font/google";
 import ClipGrid from "@/app/components/ClipGrid";
+import { TUser } from "@/app/utils/types";
+
 const londrina = Londrina_Solid({
   weight: "400",
   subsets: ["latin"],
@@ -17,7 +19,7 @@ const UserPage = (props: Props) => {
   const params = useParams();
   const user_id = params?.user_id ? Number(params.user_id) : null;
 
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<TUser>({} as TUser);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
