@@ -110,7 +110,7 @@ const Clips = (props: { user_id: number }) => {
         ) : (
           <>
             {data.map((clip) => (
-              <React.Fragment key={clip.id}>
+              <React.Fragment key={clip.clip_id}>
                 {/* Use Fragment to avoid adding extra div */}
                 <Clip
                   url={clip.clip_url}
