@@ -70,8 +70,33 @@ const UserPage = (props: Props) => {
 export default UserPage;
 
 const Clips = (props: { user_id: number }) => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
   useEffect(() => {
     console.log("Fetching clips for user", props.user_id);
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/clips?user_id=" + props.user_id);
+
+        if (!response.ok) {
+          throw new Error(response.statusText);
+        }
+
+        const result = await response.json();
+        console.log("FAART", result);
+        setData(result[0]);
+      } catch (err) {
+        if (err instanceof Error) {
+          setError(err.message);
+        } else {
+          setError("An unknown error occurred");
+        }
+      } finally {
+        setLoading(false);
+      }
+    };
+    fetchData();
   }, []);
 
   return <div className="mx-auto max-w-2xl">CLIPPIES {props.user_id}</div>;
