@@ -6,6 +6,7 @@ import User from "@/app/components/User";
 import { Londrina_Solid } from "next/font/google";
 import ClipGrid from "@/app/components/ClipGrid";
 import { TUser } from "@/app/utils/types";
+import Clip from "@/app/components/Clip";
 
 const londrina = Londrina_Solid({
   weight: "400",
@@ -49,7 +50,7 @@ const UserPage = (props: Props) => {
     // Call the async function
     fetchData();
   }, []); // Empty dependency array means this runs once after the initial render
-  console.log(data);
+  console.log("BALLS", data);
   return (
     <div className="mx-auto max-w-2xl">
       <Title />
@@ -70,7 +71,7 @@ const UserPage = (props: Props) => {
 export default UserPage;
 
 const Clips = (props: { user_id: number }) => {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<any[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   useEffect(() => {
@@ -84,8 +85,7 @@ const Clips = (props: { user_id: number }) => {
         }
 
         const result = await response.json();
-        console.log("FAART", result);
-        setData(result[0]);
+        setData(result);
       } catch (err) {
         if (err instanceof Error) {
           setError(err.message);
@@ -98,8 +98,38 @@ const Clips = (props: { user_id: number }) => {
     };
     fetchData();
   }, []);
-
-  return <div className="mx-auto max-w-2xl">CLIPPIES {props.user_id}</div>;
+  console.log("CLIPS", data);
+  return (
+    <>
+      <div className="mx-auto max-w-2xl">
+        {loading ? (
+          <Loader />
+        ) : error ? (
+          <ErrorComponent error={error} />
+        ) : (
+          <>
+            {data.map((clip) => (
+              <React.Fragment key={clip.id}>
+                {/* Use Fragment to avoid adding extra div */}
+                <Clip
+                  url={clip.url}
+                  title={clip.title}
+                  description={clip.description}
+                  date={clip.date}
+                  author={clip.display_name}
+                  game={clip.title}
+                  // profile_url={profile_url}
+                  // user_id={user_id}
+                  className=""
+                  controls
+                />
+              </React.Fragment>
+            ))}
+          </>
+        )}
+      </div>
+    </>
+  );
 };
 
 const Title = () => {
