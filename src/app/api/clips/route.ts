@@ -32,8 +32,22 @@ ORDER BY clips.id ASC`;
       break;
     case "user_id":
       const user_id = searchParams.get("user_id");
-      const clipRows =
-        await sql`SELECT * from CLIPS WHERE user_id = ${user_id} ORDER BY id ASC`;
+      // const clipRows =
+      //   await sql`SELECT * from CLIPS WHERE user_id = ${user_id} ORDER BY id ASC`;
+      const clipRows = await sql`SELECT clips.url as clip_url,
+clips.title as clip_title,
+clips.description as clip_description,
+clips.date as clip_date,
+clips.id as clip_id,
+games.title as game_title,
+users.display_name as user_display_name,
+users.id as user_id,
+users.profile_url as profile_url
+FROM clips
+JOIN games ON clips.game_id = games.id
+JOIN users ON clips.user_id = users.id
+WHERE clips.user_id = ${user_id}
+ORDER BY clips.id ASC`;
       return Response.json(clipRows.rows);
 
     default:

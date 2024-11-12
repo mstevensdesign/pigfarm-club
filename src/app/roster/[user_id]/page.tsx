@@ -113,14 +113,14 @@ const Clips = (props: { user_id: number }) => {
               <React.Fragment key={clip.id}>
                 {/* Use Fragment to avoid adding extra div */}
                 <Clip
-                  url={clip.url}
-                  title={clip.title}
-                  description={clip.description}
-                  date={clip.date}
-                  author={clip.display_name}
-                  game={clip.title}
-                  // profile_url={profile_url}
-                  // user_id={user_id}
+                  url={clip.clip_url}
+                  title={clip.clip_title}
+                  description={clip.clip_description}
+                  date={clip.clip_date}
+                  author={clip.user_display_name}
+                  game={clip.game_title}
+                  profile_url={clip.profile_url}
+                  user_id={clip.user_id}
                   className=""
                   controls
                 />
