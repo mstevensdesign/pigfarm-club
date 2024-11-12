@@ -27,7 +27,7 @@ const User = (props: Props) => {
 
 const Divider = () => {
   return (
-    <div className="mx-auto px-5">
+    <div className="mx-auto p-5">
       <hr className="border-gray-500" />
     </div>
   );
