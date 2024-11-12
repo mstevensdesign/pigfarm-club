@@ -52,7 +52,8 @@ const UserPage = (props: Props) => {
   }, []); // Empty dependency array means this runs once after the initial render
   console.log("BALLS", data);
   return (
-    <div className="mx-auto max-w-2xl">
+    // <div className="mx-auto max-w-2xl">
+    <div className="mx-auto">
       <Title />
       {loading ? (
         <Loader />
@@ -101,7 +102,7 @@ const Clips = (props: { user_id: number }) => {
   console.log("CLIPS", data);
   return (
     <>
-      <div className="mx-auto max-w-2xl">
+      <div className="grid grid-cols-1 gap-x-2 gap-y-4 pb-5 md:grid-cols-2 md:px-6 xl:grid-cols-3">
         {loading ? (
           <Loader />
         ) : error ? (
