@@ -3,7 +3,7 @@ import { londrina } from "./utils/fonts";
 
 export default function Home() {
   return (
-    <Container className="flex h-[calc(100vh-74px*3)] w-screen flex-col items-center justify-center">
+    <Container>
       <Logo />
       <Title />
     </Container>
@@ -12,16 +12,12 @@ export default function Home() {
 
 import { ReactNode } from "react";
 
-const Container = ({
-  children,
-  className,
-}: {
-  children: ReactNode;
-  className: string;
-}) => {
+const Container = ({ children }: { children: ReactNode }) => {
   return (
     <>
-      <div className={className}>{children}</div>
+      <div className="flex h-[calc(100vh-74px*3)] w-screen flex-col items-center justify-center">
+        {children}
+      </div>
     </>
   );
 };
