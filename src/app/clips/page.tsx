@@ -14,10 +14,9 @@ const ClipsPage = async (props: Props) => {
   console.log("FART: ", clips);
 
   return (
-    <div className="">
-      {/* <div className="sticky top-[16px] mb-4 flex justify-center"> */}
-      <div className="mb-4 mt-1 flex justify-center px-6">
-        <div className="relative w-full max-w-md">
+    <>
+      <div className="mb-4 mt-1 flex justify-center bg-pink-400 px-6">
+        <div className="relative w-full max-w-md bg-indigo-300">
           <input
             type="text"
             className="w-full rounded-md border p-2 pl-10 pr-4 focus:outline-none focus:ring-2 focus:ring-slate-500"
@@ -31,8 +30,7 @@ const ClipsPage = async (props: Props) => {
         </div>
       </div>
       <ClipGrid clips={clips} title="Overwatch 2" />
-      {/* <ClipGrid clips={clips} title="Castle Crashers" /> */}
-    </div>
+    </>
   );
 };
 
