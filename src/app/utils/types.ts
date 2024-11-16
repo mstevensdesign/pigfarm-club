@@ -5,6 +5,9 @@ export type TUser = {
   pronouns: string;
   dob: string;
   description: string;
+  first_name: string;
+  last_name: string;
+  email: string;
 };
 
 export type TClip = {

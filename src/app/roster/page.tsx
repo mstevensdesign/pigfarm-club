@@ -3,6 +3,7 @@
 import Image from "next/image";
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
+import { TUser } from "../utils/types";
 
 type Props = {};
 
@@ -99,20 +100,20 @@ const Roster = (props: Props) => {
           role="list"
           className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
         >
-          {data.map((person: any) => (
-            <li key={person.name}>
+          {data.map((person: TUser) => (
+            <li key={person.display_name}>
               <Image
                 alt=""
                 src={person.profile_url}
-                className="aspect-[14/13] w-full rounded-2xl object-cover"
+                className="aspect-[14/13] w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-105"
                 width={200}
                 height={200}
               />
               <h3 className="mt-2 text-lg font-semibold leading-8 tracking-tight">
-                {person.name}
+                {person.first_name} {person.last_name}
               </h3>
-              <p className="">{person.role}</p>
-              <p className="">{person.location}</p>
+              <p className="">{person.dob}</p>
+              {/* <p className="">{person.description}</p> */}
             </li>
           ))}
         </ul>
