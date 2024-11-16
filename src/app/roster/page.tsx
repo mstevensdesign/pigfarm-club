@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import React from "react";
+import { useQuery } from "@tanstack/react-query";
 
 type Props = {};
 
@@ -62,6 +65,25 @@ const people = [
 ];
 
 const Roster = (props: Props) => {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["roster"],
+    queryFn: async () => {
+      const response = await fetch("/api/users");
+      const data = await response.json();
+      return data;
+    },
+  });
+
+  console.log(data);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
+
   return (
     <div className="py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
