@@ -19,4 +19,5 @@ export type TClip = {
   created_at: string;
   updated_at: string;
   user: TUser;
+  players: string[];
 };
