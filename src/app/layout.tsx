@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navigation } from "./components/Navigation";
+import ReactQueryProvider from "./utils/providers";
 
 export const metadata: Metadata = {
   title: "PigFarm Club",
@@ -15,8 +16,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`bg-yellow`}>
-        <Navigation />
-        <div>{children}</div>
+        <ReactQueryProvider>
+          <Navigation />
+          <div>{children}</div>
+        </ReactQueryProvider>
       </body>
     </html>
   );
