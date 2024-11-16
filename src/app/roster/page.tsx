@@ -4,6 +4,8 @@ import Image from "next/image";
 import React from "react";
 import { useQuery } from "@tanstack/react-query";
 import { TUser } from "../utils/types";
+import Link from "next/link";
+import Loader from "../components/Loader";
 
 type Props = {};
 
@@ -78,7 +80,11 @@ const Roster = (props: Props) => {
   console.log(data);
 
   if (isLoading) {
-    return <div>Loading...</div>;
+    return (
+      <div className="flex h-[calc(100vh-74px)] items-center justify-center">
+        <Loader />
+      </div>
+    );
   }
 
   if (error) {
@@ -102,13 +108,15 @@ const Roster = (props: Props) => {
         >
           {data.map((person: TUser) => (
             <li key={person.display_name}>
-              <Image
-                alt=""
-                src={person.profile_url}
-                className="aspect-[14/13] w-full rounded-2xl object-cover transition-transform duration-300 hover:scale-105"
-                width={200}
-                height={200}
-              />
+              <Link href={`/roster/${person.id}`}>
+                <Image
+                  alt=""
+                  src={person.profile_url}
+                  className="aspect-[14/13] w-full rounded-2xl object-cover contrast-125 filter transition-transform duration-300 hover:scale-105 hover:contrast-100"
+                  width={200}
+                  height={200}
+                />
+              </Link>
               <h3 className="mt-2 text-lg font-semibold leading-8 tracking-tight">
                 {person.first_name} {person.last_name}
               </h3>
