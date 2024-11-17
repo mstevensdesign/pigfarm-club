@@ -6,6 +6,7 @@ import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import FilterModal from "../components/FilterModal";
 import Loader from "../components/Loader";
 import { useQuery } from "@tanstack/react-query";
+import Clip from "../components/Clip";
 
 export const fetchCache = "force-no-store";
 export const dynamic = "force-dynamic";
@@ -45,7 +46,26 @@ const ClipsPage = (props: Props) => {
           <FilterButton clips={data} />
         </SearchContainer>
       </Container>
-      <ClipGrid clips={data} title="Overwatch 2" />
+      {/* <ClipGrid clips={data} /> */}
+      <div className="grid grid-cols-1 gap-x-2 gap-y-4 pb-5 md:grid-cols-2 md:px-6 xl:grid-cols-3">
+        {data.map((clip: any) => (
+          <React.Fragment key={clip.id}>
+            {/* Use Fragment to avoid adding extra div */}
+            <Clip
+              url={clip.url}
+              title={clip.title}
+              description={clip.description}
+              date={clip.date}
+              author={clip.user_display_name}
+              game={clip.game_title}
+              profile_url={clip.user_profile_url}
+              user_id={clip.user_id}
+              className=""
+              controls
+            />
+          </React.Fragment>
+        ))}
+      </div>
     </>
   );
 };
