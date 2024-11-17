@@ -2,14 +2,8 @@
 
 import ReactPlayer from "react-player";
 import { useEffect, useState } from "react";
-import { Maven_Pro } from "next/font/google";
 import Link from "next/link";
-
-const maven = Maven_Pro({
-  weight: ["400", "500", "700"],
-  subsets: ["latin"],
-  display: "swap",
-});
+import { maven } from "../utils/fonts";
 
 type Props = {
   url?: string;
