@@ -1,18 +1,40 @@
+"use client";
+
 import React from "react";
 import ClipGrid from "../components/ClipGrid";
-import { getClips, getClipsByTag, getClipsByGame } from "../utils/utils";
 import { MagnifyingGlassIcon } from "@heroicons/react/16/solid";
 import FilterModal from "../components/FilterModal";
+import Loader from "../components/Loader";
+import { useQuery } from "@tanstack/react-query";
 
 export const fetchCache = "force-no-store";
 export const dynamic = "force-dynamic";
 
 type Props = {};
 
-const ClipsPage = async (props: Props) => {
-  const clips = await getClipsByGame(1);
-  console.log("FART: ", clips);
-  console.log("PISS");
+const ClipsPage = (props: Props) => {
+  const { data, isLoading, error } = useQuery({
+    queryKey: ["clips"],
+    queryFn: async () => {
+      const response = await fetch("/api/clips");
+      const data = await response.json();
+      return data;
+    },
+  });
+
+  console.log(data);
+
+  if (isLoading) {
+    return (
+      <div className="flex h-[calc(100vh-74px)] items-center justify-center">
+        <Loader />
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div>Error: {error.message}</div>;
+  }
 
   return (
     <>
@@ -20,10 +42,10 @@ const ClipsPage = async (props: Props) => {
         <SearchContainer>
           <SearchInput />
           <MagnifyingGlassIcon className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-          <FilterButton clips={clips} />
+          <FilterButton clips={data} />
         </SearchContainer>
       </Container>
-      <ClipGrid clips={clips} title="Overwatch 2" />
+      <ClipGrid clips={data} title="Overwatch 2" />
     </>
   );
 };
