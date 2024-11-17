@@ -12,6 +12,7 @@ type Props = {};
 const ClipsPage = async (props: Props) => {
   const clips = await getClipsByGame(1);
   console.log("FART: ", clips);
+  console.log("PISS");
 
   return (
     <>

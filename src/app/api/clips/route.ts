@@ -52,7 +52,21 @@ ORDER BY clips.id ASC`;
 
     default:
       console.log("default");
-      const defaultRows = await sql`SELECT * from CLIPS ORDER BY id ASC`;
+      // const defaultRows = await sql`SELECT * from CLIPS ORDER BY id ASC`;
+      const defaultRows = await sql`SELECT
+            clips.id as id,
+            clips.title as title,
+            clips.date as date,
+            clips.description as description,
+            clips.url as url,
+      users.id as user_id,
+      users.display_name as user_display_name,
+      users.profile_url as user_profile_url,
+      games.title as game_title
+      FROM clips
+      JOIN games ON clips.game_id = games.id
+      JOIN users ON clips.user_id = users.id
+      ORDER BY clips.id ASC`;
       return Response.json(defaultRows.rows);
   }
   if (game_id) {
