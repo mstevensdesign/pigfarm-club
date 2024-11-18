@@ -19,8 +19,8 @@ const User = (props: Props) => {
           <Description user={props.user} />
         </div>
       </div>
-      <Tabs />
-      <Divider />
+      {/* <Tabs />
+      <Divider /> */}
     </>
   );
 };
