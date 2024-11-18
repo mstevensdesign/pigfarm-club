@@ -55,9 +55,9 @@ const UserPage = () => {
                   title={clip.title}
                   description={clip.description}
                   date={clip.date}
-                  author={clip.user_display_name}
                   game={clip.game_title}
-                  profile_url={clip.profile_url}
+                  author={clip.user_display_name}
+                  profile_url={clip.user_profile_url}
                   user_id={clip.user_id}
                   className=""
                   controls
