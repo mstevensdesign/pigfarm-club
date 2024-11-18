@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 import Link from "next/link";
 import Loader from "../components/Loader";
 import { TUser } from "../utils/types";
+import ImageSkeleton from "../components/ImageSkeleton";
 
 const Roster = () => {
   const { data, isLoading, error } = useQuery({
