@@ -79,26 +79,13 @@ const AboutUs = (props: Props) => {
               </h1>
               <div className="max-w-xl">
                 <p className="mt-6">
-                  Faucibus commodo massa rhoncus, volutpat. Dignissim sed eget
-                  risus enim. Mattis mauris semper sed amet vitae sed turpis id.
-                  Id dolor praesent donec est. Odio penatibus risus viverra
-                  tellus varius sit neque erat velit. Faucibus commodo massa
-                  rhoncus, volutpat. Dignissim sed eget risus enim. Mattis
-                  mauris semper sed amet vitae sed turpis id.
-                </p>
-                <p className="mt-8">
-                  Et vitae blandit facilisi magna lacus commodo. Vitae sapien
-                  duis odio id et. Id blandit molestie auctor fermentum
-                  dignissim. Lacus diam tincidunt ac cursus in vel. Mauris
-                  varius vulputate et ultrices hac adipiscing egestas. Iaculis
-                  convallis ac tempor et ut. Ac lorem vel integer orci.
-                </p>
-                <p className="mt-8">
-                  Et vitae blandit facilisi magna lacus commodo. Vitae sapien
-                  duis odio id et. Id blandit molestie auctor fermentum
-                  dignissim. Lacus diam tincidunt ac cursus in vel. Mauris
-                  varius vulputate et ultrices hac adipiscing egestas. Iaculis
-                  convallis ac tempor et ut. Ac lorem vel integer orci.
+                  Welcome to our digital hideaway! We’re a squad of gaming
+                  friends bonded by clutch plays, late-night laughs, cats, and
+                  plenty of ultimates gone wrong. We’re all about
+                  variety—shooters, RPGs, and movie marathons with epic scenes
+                  and classic quotes. Whether you’re here to play, chill, or
+                  join the fun, you’re in for a good time. Let’s roll out and
+                  hit play!
                 </p>
               </div>
             </div>
