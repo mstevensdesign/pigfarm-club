@@ -5,6 +5,7 @@ import Loader from "@/app/components/Loader";
 import User from "@/app/components/User";
 import { useQuery } from "@tanstack/react-query";
 import Clip from "@/app/components/Clip";
+import { TClip } from "@/app/utils/types";
 
 const UserPage = () => {
   const params = useParams();
@@ -50,7 +51,7 @@ const UserPage = () => {
             {clipsLoading ? (
               <Loader />
             ) : (
-              clips.map((clip: any) => (
+              clips.map((clip: TClip) => (
                 <React.Fragment key={clip.id}>
                   {/* Use Fragment to avoid adding extra div */}
                   <Clip

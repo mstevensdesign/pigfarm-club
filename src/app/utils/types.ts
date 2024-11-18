@@ -16,8 +16,13 @@ export type TClip = {
   description: string;
   url: string;
   thumbnail_url: string;
+  date: string;
   created_at: string;
   updated_at: string;
+  game_title: string;
+  user_display_name: string;
+  user_profile_url: string;
+  user_id: number;
   user: TUser;
   players: string[];
 };
