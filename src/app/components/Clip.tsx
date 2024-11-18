@@ -1,9 +1,11 @@
 "use client";
 
-import ReactPlayer from "react-player";
+import ReactPlayer from "react-player/lazy";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { maven } from "../utils/fonts";
+import ClipSkeleton from "./ClipSkeleton";
+import Loader from "./Loader";
 
 type Props = {
   url?: string;
@@ -40,6 +42,7 @@ const Clip = (props: Props) => {
             width="100%"
             height="100%"
             controls={props.controls}
+            fallback={<Loader />}
           />
         )}
         <div className="flex items-center justify-between px-2 pb-1">
