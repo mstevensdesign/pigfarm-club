@@ -47,23 +47,27 @@ const UserPage = () => {
           <Tabs />
           <Divider />
           <div className="grid grid-cols-1 gap-x-2 gap-y-4 pb-5 md:grid-cols-2 md:px-6 xl:grid-cols-3">
-            {clips.map((clip: any) => (
-              <React.Fragment key={clip.id}>
-                {/* Use Fragment to avoid adding extra div */}
-                <Clip
-                  url={clip.url}
-                  title={clip.title}
-                  description={clip.description}
-                  date={clip.date}
-                  game={clip.game_title}
-                  author={clip.user_display_name}
-                  profile_url={clip.user_profile_url}
-                  user_id={clip.user_id}
-                  className=""
-                  controls
-                />
-              </React.Fragment>
-            ))}
+            {clipsLoading ? (
+              <Loader />
+            ) : (
+              clips.map((clip: any) => (
+                <React.Fragment key={clip.id}>
+                  {/* Use Fragment to avoid adding extra div */}
+                  <Clip
+                    url={clip.url}
+                    title={clip.title}
+                    description={clip.description}
+                    date={clip.date}
+                    game={clip.game_title}
+                    author={clip.user_display_name}
+                    profile_url={clip.user_profile_url}
+                    user_id={clip.user_id}
+                    className=""
+                    controls
+                  />
+                </React.Fragment>
+              ))
+            )}
           </div>
         </>
       )}
