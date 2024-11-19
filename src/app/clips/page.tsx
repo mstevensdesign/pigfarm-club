@@ -62,19 +62,18 @@ const ClipsPage = (props: Props) => {
       {/* <ClipGrid clips={data} /> */}
       <div className="grid grid-cols-1 gap-x-2 gap-y-4 pb-5 md:grid-cols-2 md:px-6 xl:grid-cols-3">
         {data.map((clip: TClip) => (
-          <React.Fragment key={clip.id}>
-            <Clip
-              id={clip.id}
-              url={clip.url}
-              title={clip.title}
-              description={clip.description}
-              date={clip.date}
-              user_display_name={clip.user_display_name}
-              game_title={clip.game_title}
-              user_profile_url={clip.user_profile_url}
-              user_id={clip.user_id}
-            />
-          </React.Fragment>
+          <Clip
+            key={clip.id}
+            id={clip.id}
+            url={clip.url}
+            title={clip.title}
+            description={clip.description}
+            date={clip.date}
+            user_display_name={clip.user_display_name}
+            game_title={clip.game_title}
+            user_profile_url={clip.user_profile_url}
+            user_id={clip.user_id}
+          />
         ))}
       </div>
     </>

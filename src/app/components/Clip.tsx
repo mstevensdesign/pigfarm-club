@@ -2,11 +2,13 @@ import ReactPlayer from "react-player";
 import Loader from "./Loader";
 import { TClip } from "../utils/types";
 import Link from "next/link";
+import React from "react";
 
 const Clip = (clip: TClip) => {
   console.log(clip);
   return (
-    <div className={`card`}>
+    // <React.Fragment key={clip.id}>
+    <div key={clip.id} className={`card`}>
       <div className="rounded-lg bg-white shadow-md">
         <ReactPlayer
           url={clip.url}
@@ -50,6 +52,7 @@ const Clip = (clip: TClip) => {
         </div>
       </div>
     </div>
+    // </React.Fragment>
   );
 };
 
