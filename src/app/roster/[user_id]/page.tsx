@@ -55,16 +55,15 @@ const UserPage = () => {
                 <React.Fragment key={clip.id}>
                   {/* Use Fragment to avoid adding extra div */}
                   <Clip
+                    id={0}
                     url={clip.url}
                     title={clip.title}
                     description={clip.description}
                     date={clip.date}
-                    game={clip.game_title}
-                    author={clip.user_display_name}
-                    profile_url={clip.user_profile_url}
+                    game_title={clip.game_title}
+                    user_display_name={clip.user_display_name}
+                    user_profile_url={clip.user_profile_url}
                     user_id={clip.user_id}
-                    className=""
-                    controls
                   />
                 </React.Fragment>
               ))
