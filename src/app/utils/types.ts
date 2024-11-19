@@ -12,17 +12,16 @@ export type TUser = {
 
 export type TClip = {
   id: number;
+  url: string;
   title: string;
   description: string;
-  url: string;
-  thumbnail_url: string;
   date: string;
-  created_at: string;
-  updated_at: string;
   game_title: string;
-  user_display_name: string;
-  user_profile_url: string;
+  created_at?: string;
+  updated_at?: string;
   user_id: number;
-  user: TUser;
-  players: string[];
+  user_profile_url: string;
+  user_display_name: string;
+  user?: TUser;
+  players?: string[];
 };

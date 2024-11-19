@@ -8,6 +8,7 @@ import Loader from "../components/Loader";
 import { useQuery } from "@tanstack/react-query";
 import Clip from "../components/Clip";
 import ClipSkeleton from "../components/ClipSkeleton";
+import { TClip } from "../utils/types";
 
 export const fetchCache = "force-no-store";
 export const dynamic = "force-dynamic";
@@ -60,19 +61,18 @@ const ClipsPage = (props: Props) => {
       </Container>
       {/* <ClipGrid clips={data} /> */}
       <div className="grid grid-cols-1 gap-x-2 gap-y-4 pb-5 md:grid-cols-2 md:px-6 xl:grid-cols-3">
-        {data.map((clip: any) => (
+        {data.map((clip: TClip) => (
           <React.Fragment key={clip.id}>
             <Clip
+              id={clip.id}
               url={clip.url}
               title={clip.title}
               description={clip.description}
               date={clip.date}
-              author={clip.user_display_name}
-              game={clip.game_title}
-              profile_url={clip.user_profile_url}
+              user_display_name={clip.user_display_name}
+              game_title={clip.game_title}
+              user_profile_url={clip.user_profile_url}
               user_id={clip.user_id}
-              className=""
-              controls
             />
           </React.Fragment>
         ))}
