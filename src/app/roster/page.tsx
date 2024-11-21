@@ -33,40 +33,30 @@ const Roster = () => {
   }
 
   return (
-    <div className="py-24 sm:py-32">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl lg:mx-0">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Our Team
-          </h2>
-          <p className="mt-6 text-lg leading-8">
-            We are a bunch of nerds who love gaming and building cool stuff.
-          </p>
-        </div>
-        <ul
-          role="list"
-          className="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-14 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3 xl:grid-cols-4"
-        >
-          {data.map((person: TUser) => (
-            <li key={person.display_name}>
-              <Link href={`/roster/${person.id}`}>
+    <>
+      <h4 className="text-center">Our Team</h4>
+      <ul role="list" className="">
+        {data.map((person: TUser) => (
+          <li key={person.id} className="group mb-20 flex">
+            <Link href={`/roster/${person.id}`}>
+              <div className="relative bg-pink-400">
                 <Image
-                  alt=""
+                  alt={person.first_name}
                   src={person.profile_url}
-                  className="aspect-[14/13] w-full rounded-2xl object-cover contrast-125 filter transition-transform duration-300 hover:scale-105 hover:contrast-100"
+                  className=""
                   width={200}
                   height={200}
                 />
-              </Link>
-              <h3 className="mt-2 text-lg font-semibold leading-8 tracking-tight">
-                {person.first_name} {person.last_name}
-              </h3>
-              <p className="">{person.dob}</p>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+                <div className="absolute bottom-0 flex w-full flex-col bg-black bg-opacity-55 text-white">
+                  <div className="self-center">{person.display_name}</div>
+                  {/* <div className="h-5 w-1/2 self-end rounded-md bg-white"></div> */}
+                </div>
+              </div>
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </>
   );
 };
 
