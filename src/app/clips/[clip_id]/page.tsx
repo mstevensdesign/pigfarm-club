@@ -45,6 +45,15 @@ const ClipDetailPage = () => {
               user_profile_url={clipData.user_profile_url}
               user_id={clipData.user_id}
             />
+            <div className="mt-4">Description: {clipData.description}</div>
+            <div className="">
+              <span>Tagged Players: </span>
+              {clipData.players.map((player: string, index: number) => (
+                <>
+                  <span key={index}>{player} </span>
+                </>
+              ))}
+            </div>
           </div>
         </div>
       )}
