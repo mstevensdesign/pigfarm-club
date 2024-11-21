@@ -18,7 +18,7 @@ const ClipDetailPage = () => {
     queryFn: async () => {
       const response = await fetch("/api/clips/" + clip_id);
       const data = await response.json();
-      return data[0];
+      return data;
     },
   });
 
