@@ -13,12 +13,11 @@ const ClipGrid = (props: any) => {
               title={clip.title}
               description={clip.description}
               date={clip.date}
-              author={clip.user_display_name}
-              game={clip.game_title}
-              profile_url={clip.user_profile_url}
+              user_display_name={clip.user_display_name}
+              game_title={clip.game_title}
+              user_profile_url={clip.user_profile_url}
               user_id={clip.user_id}
-              className=""
-              controls
+              id={0}
             />
           </React.Fragment>
         ))}
