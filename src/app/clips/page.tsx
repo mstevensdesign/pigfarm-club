@@ -60,7 +60,7 @@ const ClipsPage = (props: Props) => {
         </SearchContainer>
       </Container>
       {/* <ClipGrid clips={data} /> */}
-      <div className="grid grid-cols-1 gap-x-2 gap-y-4 pb-5 md:grid-cols-2 md:px-6 xl:grid-cols-3">
+      <div className="grid grid-cols-1 gap-x-6 gap-y-6 pb-5 md:grid-cols-2 md:px-6 xl:grid-cols-3">
         {data.map((clip: TClip) => (
           <Clip
             key={clip.id}

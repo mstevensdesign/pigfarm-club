@@ -47,7 +47,7 @@ const UserPage = () => {
           <User user={user} />
           <Tabs />
           <Divider />
-          <div className="grid grid-cols-1 gap-x-2 gap-y-4 pb-5 md:grid-cols-2 md:px-6 xl:grid-cols-3">
+          <div className="grid grid-cols-1 gap-x-5 gap-y-4 pb-5 md:grid-cols-2 md:px-6 xl:grid-cols-3">
             {clipsLoading ? (
               <Loader />
             ) : (
