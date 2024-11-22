@@ -9,9 +9,9 @@ const Clip = (clip: TClip) => {
   return (
     <div
       key={clip.id}
-      className="card transform overflow-hidden rounded-md shadow-lg transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
+      className="card transform shadow-md transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl"
     >
-      <div className="rounded-lg bg-white shadow-md">
+      <div className="overflow-hidden rounded-lg bg-white">
         <ReactPlayer
           url={clip.url}
           className="aspect-video"
