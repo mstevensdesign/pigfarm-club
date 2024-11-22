@@ -28,20 +28,7 @@ const ClipsPage = (props: Props) => {
   if (isLoading) {
     return (
       <>
-        <Container>
-          <SearchContainer>
-            <SearchInput />
-            <MagnifyingGlassIcon className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-            <FilterButton clips={data} />
-          </SearchContainer>
-        </Container>
-        <div className="grid grid-cols-1 gap-x-2 gap-y-4 pb-5 md:grid-cols-2 md:px-6 xl:grid-cols-3">
-          {Array.from({ length: 6 }).map((_, index) => (
-            <React.Fragment key={index}>
-              <ClipSkeleton />
-            </React.Fragment>
-          ))}
-        </div>
+        <Loader />
       </>
     );
   }
@@ -52,14 +39,6 @@ const ClipsPage = (props: Props) => {
 
   return (
     <>
-      <Container>
-        <SearchContainer>
-          <SearchInput />
-          <MagnifyingGlassIcon className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-          <FilterButton clips={data} />
-        </SearchContainer>
-      </Container>
-      {/* <ClipGrid clips={data} /> */}
       <div className="grid grid-cols-1 gap-x-6 gap-y-6 pb-5 md:grid-cols-2 md:px-6 xl:grid-cols-3">
         {data.map((clip: TClip) => (
           <Clip
