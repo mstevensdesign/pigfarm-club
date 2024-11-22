@@ -79,9 +79,13 @@ const RosterCard = (
             className="object-cover"
             layout="fill"
           />
-          <div className="absolute bottom-0 flex w-full flex-col bg-black bg-opacity-55 text-white">
-            <div className="self-center py-2">{person.display_name}</div>
+          <div className="absolute inset-0 bottom-0 bg-black opacity-25 transition-all duration-300 group-hover:opacity-0"></div>
+          <div className="absolute bottom-0 flex w-full flex-col justify-end bg-black bg-opacity-55 text-white">
+            <div className="py-3 text-center">{person.display_name}</div>
           </div>
+          {/* <div className="absolute bottom-0 flex w-full flex-col bg-black bg-opacity-55 text-white">
+            <div className="self-center py-2">{person.display_name}</div>
+          </div> */}
         </div>
       </Link>
     </li>
