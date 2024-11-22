@@ -7,6 +7,7 @@ import Link from "next/link";
 import Loader from "../components/Loader";
 import { TUser } from "../utils/types";
 import ImageSkeleton from "../components/ImageSkeleton";
+import { londrina, maven } from "../utils/fonts";
 
 const Roster = () => {
   const { data, isLoading, error } = useQuery({
@@ -51,7 +52,13 @@ const Roster = () => {
 };
 
 const RosterTitle = () => {
-  return <h4 className="text-center">Our Team</h4>;
+  return (
+    <>
+      <h2 className={`text-h4 ${londrina.className} text-center text-green`}>
+        Our Team
+      </h2>
+    </>
+  );
 };
 
 const RosterCardGrid = ({ children }: { children: React.ReactNode }) => {
@@ -72,16 +79,22 @@ const RosterCard = (
   return (
     <li key={key} className="group mb-5">
       <Link href={`/roster/${person.id}`}>
-        <div className="relative h-[400px] w-[300px] transform overflow-hidden rounded-lg bg-pink-400 transition-transform duration-300 group-hover:scale-105">
+        <div className="relative h-[400px] w-[300px] transform overflow-hidden rounded-lg bg-pink-400 transition-transform duration-500 group-hover:scale-105">
           <Image
             alt={person.first_name}
             src={person.profile_url}
             className="object-cover"
             layout="fill"
           />
-          <div className="absolute inset-0 bottom-0 bg-black opacity-25 transition-all duration-300 group-hover:opacity-0"></div>
-          <div className="absolute bottom-0 flex w-full flex-col justify-end bg-black bg-opacity-55 text-white">
-            <div className="py-3 text-center">{person.display_name}</div>
+          <div
+            className={`absolute inset-0 bottom-0 bg-black opacity-25 transition-all duration-500 group-hover:opacity-0`}
+          ></div>
+          <div
+            className={`${maven.className} absolute bottom-0 flex w-full flex-col justify-end bg-black bg-opacity-55 text-white`}
+          >
+            <div className="py-3 text-center font-normal transition-all duration-500 group-hover:font-bold">
+              {person.display_name.toUpperCase()}
+            </div>
           </div>
           {/* <div className="absolute bottom-0 flex w-full flex-col bg-black bg-opacity-55 text-white">
             <div className="self-center py-2">{person.display_name}</div>
