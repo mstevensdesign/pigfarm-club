@@ -79,7 +79,7 @@ const RosterCard = (
   return (
     <li key={key} className="group mb-5">
       <Link href={`/roster/${person.id}`}>
-        <div className="relative h-[400px] w-[300px] transform overflow-hidden rounded-lg bg-pink-400 transition-transform duration-500 group-hover:scale-105">
+        <div className="relative h-[400px] w-[300px] transform overflow-hidden rounded-lg bg-pink-400 shadow-md transition-transform duration-500 hover:shadow-2xl group-hover:scale-105">
           <Image
             alt={person.first_name}
             src={person.profile_url}
@@ -90,7 +90,7 @@ const RosterCard = (
             className={`absolute inset-0 bottom-0 bg-black opacity-25 transition-all duration-500 group-hover:opacity-0`}
           ></div>
           <div
-            className={`${maven.className} absolute bottom-0 flex w-full flex-col justify-end bg-black bg-opacity-55 text-white`}
+            className={`${maven.className} absolute bottom-0 flex w-full flex-col justify-end bg-slate-800 bg-opacity-55 text-white`}
           >
             <div className="py-3 text-center font-normal transition-all duration-500 group-hover:font-bold">
               {person.display_name.toUpperCase()}
