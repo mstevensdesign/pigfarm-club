@@ -90,9 +90,9 @@ const RosterCard = (
             className={`absolute inset-0 bottom-0 bg-black opacity-25 transition-all duration-500 group-hover:opacity-0`}
           ></div>
           <div
-            className={`${maven.className} absolute bottom-0 flex w-full flex-col justify-end bg-slate-800 bg-opacity-55 text-white`}
+            className={`${maven.className} absolute bottom-0 flex w-full flex-col justify-end bg-green bg-opacity-85 text-yellow`}
           >
-            <div className="py-3 text-center font-normal transition-all duration-500 group-hover:font-bold">
+            <div className="py-3 text-center font-semibold transition-all duration-500 group-hover:font-bold">
               {person.display_name.toUpperCase()}
             </div>
           </div>
