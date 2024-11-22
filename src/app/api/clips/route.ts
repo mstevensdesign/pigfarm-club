@@ -1,12 +1,6 @@
 import { sql } from "@vercel/postgres";
 import { type NextRequest } from "next/server";
 
-// export async function GET() {
-//   const data = { user_id: 1 };
-//   const { rows } = await sql`SELECT * from CLIPS ORDER BY id ASC`;
-//   return Response.json(rows);
-// }
-
 export async function GET(request: NextRequest) {
   const searchParams = request.nextUrl.searchParams;
   console.log(searchParams);
@@ -20,6 +14,7 @@ export async function GET(request: NextRequest) {
 clips.title as title,
 clips.description as description,
 clips.date as date,
+clips.tags as tags,
 games.title as game_title,
 users.display_name as user_display_name,
 users.id as user_id,
@@ -40,6 +35,7 @@ clips.title as title,
 clips.description as description,
 clips.date as date,
 clips.id as id,
+clips.tags as tags,
 games.title as game_title,
 users.display_name as user_display_name,
 users.id as user_id,
@@ -50,6 +46,32 @@ JOIN users ON clips.user_id = users.id
 WHERE clips.user_id = ${user_id}
 ORDER BY clips.id ASC`;
       return Response.json(clipsByUserID);
+    case "tags":
+      const tags = searchParams.get("tags");
+      // const clipRows =
+      //   await sql`SELECT * from CLIPS WHERE user_id = ${user_id} ORDER BY id ASC`;
+      const { rows: clipsByTags } = await sql`SELECT 
+      clips.id as id,
+      clips.url as url,
+clips.title as title,
+clips.description as description,
+clips.date as date,
+clips.players as players,
+clips.tags as tags,
+games.title as game_title,
+users.display_name as user_display_name,
+users.id as user_id,
+users.profile_url as user_profile_url
+FROM clips
+JOIN games ON clips.game_id = games.id
+JOIN users ON clips.user_id = users.id
+  WHERE EXISTS (
+    SELECT 1
+    FROM UNNEST(clips.tags) AS tag_element
+    WHERE tag_element ILIKE '%' || ${tags} || '%'
+  )
+ORDER BY clips.id ASC`;
+      return Response.json(clipsByTags);
 
     default:
       const { rows: allClips } = await sql`SELECT
@@ -67,25 +89,5 @@ ORDER BY clips.id ASC`;
       JOIN users ON clips.user_id = users.id
       ORDER BY clips.id ASC`;
       return Response.json(allClips);
-  }
-  if (game_id) {
-    const { rows } = await sql`SELECT clips.url as clip_url,
-clips.title as clip_title,
-clips.description as clip_description,
-clips.date as clip_date,
-clips.id as clip_id,
-games.title as game_title,
-users.display_name as user_display_name,
-users.id as user_id,
-users.profile_url as profile_url
-FROM clips
-JOIN games ON clips.game_id = games.id
-JOIN users ON clips.user_id = users.id
-WHERE clips.game_id = ${game_id}
-ORDER BY clips.id ASC`;
-    return Response.json(rows);
-  } else {
-    const { rows } = await sql`SELECT * from CLIPS ORDER BY id ASC`;
-    return Response.json(rows);
   }
 }
