@@ -34,30 +34,57 @@ const Roster = () => {
 
   return (
     <>
-      <h4 className="text-center">Our Team</h4>
-      <ul
-        role="list"
-        className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
-      >
+      <RosterTitle />
+      <RosterCardGrid>
         {data.map((person: TUser) => (
-          <li key={person.id} className="group flex flex-col items-center">
-            <Link href={`/roster/${person.id}`}>
-              <div className="relative h-48 w-48 transform overflow-hidden rounded-lg bg-pink-400 transition-transform duration-300 group-hover:scale-105 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-72 lg:w-72">
-                <Image
-                  alt={person.first_name}
-                  src={person.profile_url}
-                  className="object-cover"
-                  layout="fill"
-                />
-                <div className="absolute bottom-0 flex w-full flex-col bg-black bg-opacity-55 text-white">
-                  <div className="self-center py-2">{person.display_name}</div>
-                </div>
-              </div>
-            </Link>
-          </li>
+          <>
+            <RosterCard key={person.id} person={person} />
+            <RosterCard key={person.id} person={person} />
+            <RosterCard key={person.id} person={person} />
+            <RosterCard key={person.id} person={person} />
+            <RosterCard key={person.id} person={person} />
+          </>
         ))}
-      </ul>
+      </RosterCardGrid>
     </>
+  );
+};
+
+const RosterTitle = () => {
+  return <h4 className="text-center">Our Team</h4>;
+};
+
+const RosterCardGrid = ({ children }: { children: React.ReactNode }) => {
+  return (
+    <ul
+      role="list"
+      className="mx-5 flex flex-col items-center justify-center gap-5 lg:flex-row lg:flex-wrap lg:justify-center lg:gap-10"
+    >
+      {children}
+    </ul>
+  );
+};
+
+const RosterCard = (
+  { person }: { person: TUser },
+  { key }: { key: number },
+) => {
+  return (
+    <li key={key} className="group mb-5">
+      <Link href={`/roster/${person.id}`}>
+        <div className="relative h-[400px] w-[300px] transform overflow-hidden rounded-lg bg-pink-400 transition-transform duration-300 group-hover:scale-105">
+          <Image
+            alt={person.first_name}
+            src={person.profile_url}
+            className="object-cover"
+            layout="fill"
+          />
+          <div className="absolute bottom-0 flex w-full flex-col bg-black bg-opacity-55 text-white">
+            <div className="self-center py-2">{person.display_name}</div>
+          </div>
+        </div>
+      </Link>
+    </li>
   );
 };
 
