@@ -10,6 +10,7 @@ import ImageSkeleton from "../components/ImageSkeleton";
 import { londrina, maven } from "../utils/fonts";
 
 export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
 
 const Roster = () => {
   const { data, isLoading, error } = useQuery({
