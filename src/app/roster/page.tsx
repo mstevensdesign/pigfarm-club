@@ -9,6 +9,8 @@ import { TUser } from "../utils/types";
 import ImageSkeleton from "../components/ImageSkeleton";
 import { londrina, maven } from "../utils/fonts";
 
+export const dynamic = "force-dynamic";
+
 const Roster = () => {
   const { data, isLoading, error } = useQuery({
     queryKey: ["roster"],
