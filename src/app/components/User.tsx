@@ -72,7 +72,7 @@ const Tabs = () => {
 const Avatar = (props: Props) => {
   return (
     <img
-      className="w-40 rounded-md object-cover lg:w-36"
+      className="w-40 rounded-md object-cover"
       src={props.user?.profile_url}
       alt="avatar"
     />

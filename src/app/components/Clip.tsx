@@ -47,7 +47,7 @@ const Clip = (clip: TClip) => {
                 <img
                   alt=""
                   src={clip.user_profile_url}
-                  className="inline-block h-14 w-14 rounded-full outline-yellow hover:outline"
+                  className="inline-block h-14 w-14 rounded-full object-cover outline-yellow hover:outline"
                 />
               </Link>
             </div>
