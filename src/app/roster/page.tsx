@@ -40,10 +40,6 @@ const Roster = () => {
         {data.map((person: TUser) => (
           <>
             <RosterCard key={person.id} person={person} />
-            <RosterCard key={person.id} person={person} />
-            <RosterCard key={person.id} person={person} />
-            <RosterCard key={person.id} person={person} />
-            <RosterCard key={person.id} person={person} />
           </>
         ))}
       </RosterCardGrid>
