@@ -27,7 +27,7 @@ const Logo = () => {
     <>
       <Image
         className="transition-all hover:scale-125"
-        src="/taco-bon.svg"
+        src="/taco-bon.png"
         alt="Taco Placeholder"
         width={270}
         height={0}
@@ -40,7 +40,7 @@ const Logo = () => {
 const Title = () => {
   return (
     <>
-      <h2 className={`text-h4 ${londrina.className} -mt-16 text-green`}>
+      <h2 className={`text-h4 ${londrina.className} text-green`}>
         PigFarm Club
       </h2>
     </>
